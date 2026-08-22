@@ -1,0 +1,6 @@
+# Normalize text to LF inside the repository; check out native on Windows.
+* text=auto
+
+# Binary payloads — line-ending conversion would corrupt these.
+*.pdf binary
+*.pkl binary

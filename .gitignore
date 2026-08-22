@@ -1,0 +1,33 @@
+# --- Secrets ---------------------------------------------------------------
+.env
+.env.*
+!.env.example
+
+# --- Python ----------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# --- Virtual environments --------------------------------------------------
+.venv/
+venv/
+env/
+ENV/
+
+# --- Built indexes ---------------------------------------------------------
+# Derived artefacts; rebuild with `python -m src.ingestion.build_index`.
+storage/
+
+# --- Corpus ----------------------------------------------------------------
+# Real sourced documents are large, re-downloadable and often copyrighted, so
+# they stay out of the repo. The synthetic Northwind samples are the opposite:
+# they are ground-truth fixtures for the Phase 4 evaluation harness, so a clone
+# must get them.
+data/documents/*
+data/tabular/*
+!data/**/.gitkeep
+!data/documents/sample_*.md
+!data/documents/sample_*.pdf
+
+.ipynb_checkpoints/

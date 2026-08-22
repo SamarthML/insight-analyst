@@ -1,0 +1,31 @@
+# Insight Analyst — Phase 1 (ingestion)
+# Everything here runs locally. No API keys, no paid services.
+
+# Core
+langchain-core
+langchain-text-splitters
+langchain-community
+python-dotenv
+
+# Document loading
+pypdf                    # PDF parsing, page-level
+
+# Chunking
+tiktoken                 # token-accurate chunk sizing (optional, has a fallback)
+
+# Vector store
+langchain-chroma
+chromadb
+
+# Embeddings — default backend
+langchain-ollama         # talks to your local Ollama server
+
+# Embeddings — alternative backend (set EMBEDDING_BACKEND=sentence-transformers)
+sentence-transformers
+langchain-huggingface
+
+# Keyword index
+rank_bm25
+
+# Notebooks
+ipykernel
