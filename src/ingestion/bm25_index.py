@@ -28,14 +28,35 @@ from src import config
 # "year-over-year" and "O'Brien" survive as single searchable tokens.
 _TOKEN_RE = re.compile(r"[A-Za-z0-9][A-Za-z0-9'\-]*")
 
+# Trailing possessive only: "apple's" and "employees'" have a stem worth
+# indexing, but "o'brien" has no trailing "'s" and is left alone.
+_POSSESSIVE_RE = re.compile(r"(?<=.)'s?$")
+
 
 def tokenize(text: str) -> list[str]:
     """Lowercase word tokenizer used for both indexing and querying.
 
     Phase 2 must call this same function on incoming queries — a BM25 index is
     only meaningful if both sides are tokenized identically.
+
+    A possessive is emitted as both forms: "Apple's" yields ["apple's",
+    "apple"]. Without this, the possessive is a token that appears nowhere in
+    the corpus, so the most discriminative word in a query like "what was
+    Apple's revenue" contributes nothing and BM25 ranks on the filler terms
+    instead — observed returning NVIDIA filings for an Apple question.
+
+    Trade-off: emitting both forms slightly inflates document length and term
+    counts for BM25's normalisation, which is preferable to stripping every
+    apostrophe and merging distinct tokens like "o'brien" into "obrien".
     """
-    return [t.lower() for t in _TOKEN_RE.findall(text)]
+    tokens: list[str] = []
+    for raw in _TOKEN_RE.findall(text):
+        token = raw.lower()
+        tokens.append(token)
+        stem = _POSSESSIVE_RE.sub("", token)
+        if stem and stem != token:
+            tokens.append(stem)
+    return tokens
 
 
 @dataclass

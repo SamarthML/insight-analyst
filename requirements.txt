@@ -1,4 +1,4 @@
-# Insight Analyst — Phase 1 (ingestion)
+# Insight Analyst — Phases 1-4
 # Everything here runs locally. No API keys, no paid services.
 
 # Core
@@ -26,6 +26,27 @@ langchain-huggingface
 
 # Keyword index
 rank_bm25
+
+# Corpus fetching (src/ingestion/fetch_corpus.py)
+# beautifulsoup4 gives much cleaner text from SEC filing HTML than the regex
+# fallback does; the fetcher runs without it, just with noisier output.
+beautifulsoup4
+
+# Evaluation (Phase 4)
+PyYAML                   # the eval question set
+pandas                   # results tables
+# ragas pulls in `langchain` and `langchain-openai`, which pin
+# langchain-core<1.0.0 and will DOWNGRADE it, breaking langchain-chroma,
+# -huggingface and -ollama (all of which need >=1.x). Install ragas first, or
+# reinstall `langchain-core>=1.4.4` afterwards. ragas itself works fine on 1.x
+# despite the pip warning. ragas also depends on the `openai` package, but no
+# API key is needed unless you actually select an OpenAI model.
+ragas
+
+# UI (Phase 5, src/ui/app.py)
+# Local single-user front end over the routed pipeline and report generator.
+# Launch with `streamlit run src/ui/app.py`.
+streamlit
 
 # Notebooks
 ipykernel

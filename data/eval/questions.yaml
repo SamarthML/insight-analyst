@@ -1,0 +1,301 @@
+# Insight Analyst — RAG evaluation set (DRAFT, pending review)
+#
+# Every expected_answer below was extracted verbatim from the corpus, and every
+# ground_truth chunk_index was located by searching the built BM25 index for
+# that exact sentence. Nothing here is written from memory. Figures are quoted
+# as the filings state them.
+#
+# HOW TO EDIT
+#   - Correct, discard or replace freely; ids need not stay contiguous.
+#   - `page: -1` means the source is a text file with no pagination (the
+#     NO_PAGE sentinel in src/config.py). PDFs carry their real page number.
+#   - `chunk_index` values are positions in the current 16,917-chunk index.
+#     They are ONLY valid while chunking settings stay at 250/40. Re-chunking
+#     invalidates them; the `quote` field is the durable anchor and can be
+#     re-located automatically.
+#   - `answerable: false` marks questions whose answer is genuinely absent from
+#     the corpus. Verified by checking the BM25 vocabulary, not by assumption:
+#     "toyota", "boeing" and "pfizer" appear in no chunk. Note that "tesla",
+#     "amazon", "openai" and "bitcoin" DO appear, so they cannot be used here.
+#   - `ambiguous: true` marks questions that under-specify company or period.
+#     There is no single correct answer; the system should ask for
+#     clarification or state which entity/period it assumed.
+#   - Some `quote` values are trimmed mid-sentence on purpose. The filings use
+#     curly apostrophes (U+2019), so "The Company's" will not match an ASCII
+#     quote, and PDF extraction sometimes drops spaces ("Districts inlate
+#     November"). Quotes are cut to spans that match the corpus byte-for-byte.
+#
+# CATEGORY COUNTS: exact_fact 13 | conceptual 9 | adversarial 6  (28 total)
+
+meta:
+  corpus_chunks: 16917
+  chunking: "250 tokens / 40 overlap"
+  embedding_model: "BAAI/bge-small-en-v1.5"
+  status: final
+
+questions:
+
+  # ==========================================================================
+  # EXACT FACT — specific figures from SEC 10-K filings
+  # ==========================================================================
+
+  - id: ef-01
+    category: exact_fact
+    question: "What was NVIDIA's total revenue in fiscal year 2024, and how much did it grow?"
+    expected_answer: "$60.9 billion, up 126% from the prior year."
+    quote: "Revenue for fiscal year 2024 was $60.9 billion, up 126% from a year ago."
+    ground_truth:
+      - {source: sec_10k_nvda_2024-02-21.txt, page: -1, chunk_index: 228}
+      - {source: sec_10k_nvda_2024-02-21.txt, page: -1, chunk_index: 229}
+
+  - id: ef-02
+    category: exact_fact
+    question: "By how much did NVIDIA's Data Center revenue grow in fiscal year 2024?"
+    expected_answer: "Data Center revenue was up 217% in fiscal year 2024."
+    quote: "Data Center revenue for fiscal year 2024 was up 217%."
+    ground_truth:
+      - {source: sec_10k_nvda_2024-02-21.txt, page: -1, chunk_index: 229}
+
+  - id: ef-03
+    category: exact_fact
+    question: "What was NVIDIA's revenue in fiscal year 2026?"
+    expected_answer: "$215.9 billion, up 65% from the prior year."
+    quote: "Revenue for fiscal year 2026 was $215.9 billion, up 65% from a year ago."
+    ground_truth:
+      - {source: sec_10k_nvda_2026-02-25.txt, page: -1, chunk_index: 233}
+      - {source: sec_10k_nvda_2026-02-25.txt, page: -1, chunk_index: 234}
+
+  - id: ef-04
+    category: exact_fact
+    question: "How did Apple's total net sales change in fiscal 2023 compared with 2022?"
+    expected_answer: "Total net sales decreased 3%, or $11.0 billion, during 2023 compared to 2022."
+    quote: "total net sales decreased 3% or $11.0 billion during 2023 compared to 2022"
+    ground_truth:
+      - {source: sec_10k_aapl_2023-11-03.txt, page: -1, chunk_index: 135}
+    notes: "This is the query that exposed the BM25 possessive bug. Keep it."
+
+  - id: ef-05
+    category: exact_fact
+    question: "How much did Microsoft's revenue increase in fiscal year 2024?"
+    expected_answer: "Revenue increased $33.2 billion, or 16%, with growth across each segment."
+    quote: "Revenue increased $33.2 billion or 16% driven by growth across each of our segments."
+    ground_truth:
+      - {source: sec_10k_msft_2024-07-30.txt, page: -1, chunk_index: 245}
+
+  - id: ef-06
+    category: exact_fact
+    question: "How much did Microsoft's revenue increase in fiscal year 2025?"
+    expected_answer: "Revenue increased $36.6 billion, or 15%, with growth across each segment."
+    quote: "Revenue increased $36.6 billion or 15% with growth across each of our segments."
+    ground_truth:
+      - {source: sec_10k_msft_2025-07-30.txt, page: -1, chunk_index: 216}
+    notes: "ef-05/06/07 are near-identical in wording and differ only by year and
+      figure. Deliberate: they test whether retrieval discriminates between
+      filings rather than returning whichever Microsoft revenue chunk ranks first."
+
+  - id: ef-07
+    category: exact_fact
+    question: "How much did Microsoft's revenue increase in fiscal year 2026?"
+    expected_answer: "Revenue increased $50.1 billion, or 18%, driven by growth in Microsoft Cloud."
+    quote: "Revenue increased $50.1 billion or 18% driven by growth in Microsoft Cloud."
+    ground_truth:
+      - {source: sec_10k_msft_2026-07-29.txt, page: -1, chunk_index: 219}
+
+  - id: ef-08
+    category: exact_fact
+    question: "What net income did JPMorgan Chase report for 2023, and what was earnings per share?"
+    expected_answer: "Net income of $49.6 billion for 2023, up 32%, with earnings per share of $16.23."
+    quote: "JPMorgan Chase reported net income of $49.6 billion for 2023, up 32%, earnings per share of $16.23"
+    ground_truth:
+      - {source: sec_10k_jpm_2024-02-16.txt, page: -1, chunk_index: 641}
+
+  - id: ef-09
+    category: exact_fact
+    question: "What was JPMorganChase's net income and ROTCE for 2024?"
+    expected_answer: "Net income of $58.5 billion, up 18%, with ROE of 18% and ROTCE of 22%. EPS was $19.75."
+    quote: "JPMorganChase reported net income of $58.5 billion for 2024, up 18%, earnings per share of $19.75, ROE of 18% and ROTCE of 22%."
+    ground_truth:
+      - {source: sec_10k_jpm_2025-02-14.txt, page: -1, chunk_index: 640}
+
+  - id: ef-10
+    category: exact_fact
+    question: "Did JPMorganChase's net income rise or fall in 2025, and by how much?"
+    expected_answer: "It fell. Net income was $57.0 billion for 2025, down 2%, with EPS of $20.02."
+    quote: "JPMorganChase reported net income of $57.0 billion for 2025, down 2%, earnings per share of $20.02"
+    ground_truth:
+      - {source: sec_10k_jpm_2026-02-13.txt, page: -1, chunk_index: 628}
+    notes: "Tests direction-of-change, not just figure lookup. EPS rose while net
+      income fell, so a careless answer can easily contradict itself."
+
+  - id: ef-11
+    category: exact_fact
+    question: "What was JPMorganChase's Standardized CET1 capital ratio requirement, including regulatory buffers, as of December 31, 2024?"
+    expected_answer: "12.3%."
+    quote: "Standardized CET1 capital ratio requirement, including regulatory buffers, was 12.3% as of December 31, 2024"
+    ground_truth:
+      - {source: sec_10k_jpm_2025-02-14.txt, page: -1, chunk_index: 805}
+    notes: "The requirement, not the actual ratio. A system that conflates the two
+      is wrong even if it returns a plausible percentage."
+
+  - id: ef-12
+    category: exact_fact
+    question: "What were Coca-Cola's net operating revenues in 2024?"
+    expected_answer: "$47,061 million in 2024, compared with $45,754 million in 2023 — an increase of $1,307 million, or 3%."
+    quote: "Net operating revenues were $47,061 million in 2024, compared to $45,754 million in 2023, an increase of $1,307 million, or 3%."
+    ground_truth:
+      - {source: sec_10k_ko_2025-02-20.txt, page: -1, chunk_index: 377}
+
+  - id: ef-13
+    category: exact_fact
+    question: "What were Coca-Cola's net operating revenues in 2025 and how did they compare with 2024?"
+    expected_answer: "$47,941 million in 2025, compared with $47,061 million in 2024 — an increase of $880 million, or 2%."
+    quote: "Net operating revenues were $47,941 million in 2025, compared to $47,061 million in 2024, an increase of $880 million, or 2%."
+    ground_truth:
+      - {source: sec_10k_ko_2026-02-20.txt, page: -1, chunk_index: 382}
+
+  # ==========================================================================
+  # CONCEPTUAL — themes and outlook from Beige Book / BIS / World Bank
+  # ==========================================================================
+
+  - id: co-01
+    category: conceptual
+    question: "How did the Federal Reserve characterize overall economic activity in the January 2025 Beige Book?"
+    expected_answer: "Economic activity increased slightly to moderately across the twelve Federal Reserve Districts in late November and December."
+    quote: "Economic activity increased slightly to moderately across the twelve Federal Reserve Districts"
+    ground_truth:
+      - {source: fed_beige_book_20250115.pdf, page: 5, chunk_index: 7}
+
+  - id: co-02
+    category: conceptual
+    question: "What did the June 2025 Beige Book say about the direction of economic activity?"
+    expected_answer: "Economic activity had declined slightly since the previous report, with half of the Districts reporting declines."
+    quote: "economic activity has declined"
+    ground_truth:
+      - {source: fed_beige_book_20250604.pdf, page: 5, chunk_index: 7}
+    notes: "Pairs with co-01 as a direction reversal. If retrieval cannot separate
+      two Beige Books six months apart, it will answer one with the other."
+
+  - id: co-03
+    category: conceptual
+    question: "How were labor market conditions described in the June 2025 Beige Book?"
+    expected_answer: "Employment had been little changed since the previous report."
+    quote: "Labor MarketsEmployment has been little changed since the previous"
+    ground_truth:
+      - {source: fed_beige_book_20250604.pdf, page: 5, chunk_index: 8}
+
+  - id: co-04
+    category: conceptual
+    question: "What did the World Bank estimate for global growth in 2025?"
+    expected_answer: "Global growth is estimated to have averaged 2.7 percent in 2025, 0.4 percentage point above the June projections."
+    quote: "global growth is estimated to have averaged 2.7 percent in 2025"
+    ground_truth:
+      - {source: worldbank_global_economic_prospects_2026_01.pdf, page: 27, chunk_index: 60}
+      - {source: worldbank_global_economic_prospects_2026_01.pdf, page: 27, chunk_index: 61}
+
+  - id: co-05
+    category: conceptual
+    question: "What is the World Bank's projection for global growth in 2027, and what drives it?"
+    expected_answer: "Global growth is projected to edge up to 2.7 percent in 2027 as trade flows adjust and policy uncertainty wanes, supported by improving domestic demand."
+    quote: "Global growth is projected to edge up to 2.7 percent in 2027, as trade flows adjust and policy uncertainty wanes."
+    ground_truth:
+      - {source: worldbank_global_economic_prospects_2026_01.pdf, page: 53, chunk_index: 227}
+      - {source: worldbank_global_economic_prospects_2026_01.pdf, page: 53, chunk_index: 228}
+    notes: "Same 2.7 percent figure as co-04 but a different year and meaning
+      (estimate for 2025 vs projection for 2027). Tests whether the system
+      distinguishes them or collapses them into one fact."
+
+  - id: co-06
+    category: conceptual
+    question: "How has debt distress risk changed for fragile and conflict-affected economies?"
+    expected_answer: "The share rose from 26 percent in 2015 to about 50 percent in 2026; FCS economies have become particularly vulnerable to debt distress."
+    quote: "rose from 26 percent in 2015 to about 50 percent in 2026"
+    ground_truth:
+      - {source: worldbank_global_economic_prospects_2026_06.pdf, page: 110, chunk_index: 539}
+      - {source: worldbank_global_economic_prospects_2026_06.pdf, page: 110, chunk_index: 540}
+
+  - id: co-07
+    category: conceptual
+    question: "Why did major central banks delay raising interest rates after inflation began rising in early 2021?"
+    expected_answer: "They began lifting rates only about a year later, partly because of uncertainty about whether the inflation would persist after a long period of very subdued price increases."
+    quote: "major central banks began to lift rates only one year later, partly due to uncertainty about its persistence"
+    ground_truth:
+      - {source: bis_annual_economic_report_2024.pdf, page: 31, chunk_index: 110}
+
+  - id: co-08
+    category: conceptual
+    question: "According to the BIS, what role did central bank credibility play in controlling inflation?"
+    expected_answer: "The commitment to bringing inflation under control signalled to markets, firms and workers that the central bank would do what it took, which helped restrain inflation alongside an increase in supply."
+    quote: "the commitment to bringing inflation under control provided a strong signal to markets, firms and workers"
+    ground_truth:
+      - {source: bis_annual_economic_report_2024.pdf, page: 66, chunk_index: 270}
+
+  - id: co-09
+    category: conceptual
+    question: "How did the tone of the Beige Book change over the course of 2025?"
+    expected_answer: "It deteriorated. Activity increased slightly to moderately in the January report, but by June activity had declined slightly, with half of Districts reporting declines."
+    quote: null
+    ground_truth:
+      - {source: fed_beige_book_20250115.pdf, page: 5, chunk_index: 7}
+      - {source: fed_beige_book_20250604.pdf, page: 5, chunk_index: 7}
+    notes: "MULTI-DOCUMENT. Requires synthesising two reports, so context recall
+      needs both chunks. Expect this to be the hardest item in the set and a good
+      test of whether fusion surfaces more than one document."
+
+  # ==========================================================================
+  # ADVERSARIAL — should NOT produce a confident answer
+  # ==========================================================================
+
+  - id: adv-01
+    category: adversarial
+    subtype: unanswerable
+    answerable: false
+    question: "What was Toyota's operating income in its most recent fiscal year?"
+    expected_answer: "NOT ANSWERABLE. The corpus contains no Toyota filings or data; the system should say so rather than answer."
+    ground_truth: []
+    notes: "Verified: the token 'toyota' appears in no chunk of the index."
+
+  - id: adv-02
+    category: adversarial
+    subtype: unanswerable
+    answerable: false
+    question: "How much did Boeing spend on research and development last year?"
+    expected_answer: "NOT ANSWERABLE. Boeing does not appear anywhere in the corpus."
+    ground_truth: []
+    notes: "Verified: the token 'boeing' appears in no chunk of the index."
+
+  - id: adv-03
+    category: adversarial
+    subtype: unanswerable
+    answerable: false
+    question: "What is Pfizer's current dividend per share?"
+    expected_answer: "NOT ANSWERABLE. Pfizer does not appear anywhere in the corpus."
+    ground_truth: []
+    notes: "Verified absent. Note the tempting near-miss: 'dividend' IS in the
+      corpus, so retrieval will happily return dividend chunks about other
+      companies. This tests whether the answerer notices the entity mismatch."
+
+  - id: adv-04
+    category: adversarial
+    subtype: ambiguous
+    ambiguous: true
+    question: "What was revenue growth?"
+    expected_answer: "AMBIGUOUS. No company or period is specified; the corpus covers five companies across multiple years. The system should ask which, or state clearly which it assumed."
+    ground_truth: []
+
+  - id: adv-05
+    category: adversarial
+    subtype: ambiguous
+    ambiguous: true
+    question: "What are the main risk factors?"
+    expected_answer: "AMBIGUOUS. Five companies file risk factors in this corpus. The system should ask which company, or state its assumption."
+    ground_truth: []
+
+  - id: adv-06
+    category: adversarial
+    subtype: ambiguous
+    ambiguous: true
+    question: "What was the CET1 capital ratio?"
+    expected_answer: "AMBIGUOUS but narrowable. Only JPMorganChase reports CET1 here, so the company is inferable, but the corpus holds three filings (2023, 2024, 2025) and the answer differs by year. The system should name the year it used."
+    ground_truth: []
+    notes: "Partially resolvable ambiguity, unlike adv-04/05. Good test of whether
+      the system over-refuses when context does narrow the question."

@@ -1,0 +1,2392 @@
+{
+  "hybrid only": [
+    {
+      "id": "ef-01",
+      "category": "exact_fact",
+      "seconds": 28.5,
+      "first_rank": 1,
+      "recall": 0.5,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "sec_10k_nvda_2024-02-21.txt | no pages | chunk 229",
+        "sec_10k_nvda_2024-02-21.txt | no pages | chunk 232",
+        "sec_10k_nvda_2024-02-21.txt | no pages | chunk 245",
+        "sec_10k_nvda_2024-02-21.txt | no pages | chunk 231",
+        "sec_10k_nvda_2024-02-21.txt | no pages | chunk 358"
+      ]
+    },
+    {
+      "id": "ef-02",
+      "category": "exact_fact",
+      "seconds": 0.35,
+      "first_rank": 1,
+      "recall": 1.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "sec_10k_nvda_2024-02-21.txt | no pages | chunk 229",
+        "sec_10k_nvda_2024-02-21.txt | no pages | chunk 231",
+        "sec_10k_nvda_2025-02-26.txt | no pages | chunk 250",
+        "sec_10k_nvda_2024-02-21.txt | no pages | chunk 245",
+        "sec_10k_nvda_2025-02-26.txt | no pages | chunk 236"
+      ]
+    },
+    {
+      "id": "ef-03",
+      "category": "exact_fact",
+      "seconds": 0.28,
+      "first_rank": 3,
+      "recall": 0.5,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "sec_10k_nvda_2026-02-25.txt | no pages | chunk 352",
+        "sec_10k_nvda_2024-02-21.txt | no pages | chunk 229",
+        "sec_10k_nvda_2026-02-25.txt | no pages | chunk 234",
+        "sec_10k_nvda_2024-02-21.txt | no pages | chunk 232",
+        "sec_10k_nvda_2024-02-21.txt | no pages | chunk 358"
+      ]
+    },
+    {
+      "id": "ef-04",
+      "category": "exact_fact",
+      "seconds": 0.29,
+      "first_rank": 3,
+      "recall": 1.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "sec_10k_aapl_2023-11-03.txt | no pages | chunk 142",
+        "sec_10k_aapl_2023-11-03.txt | no pages | chunk 145",
+        "sec_10k_aapl_2023-11-03.txt | no pages | chunk 135",
+        "sec_10k_aapl_2024-11-01.txt | no pages | chunk 135",
+        "sec_10k_aapl_2024-11-01.txt | no pages | chunk 139"
+      ]
+    },
+    {
+      "id": "ef-05",
+      "category": "exact_fact",
+      "seconds": 0.31,
+      "first_rank": null,
+      "recall": 0.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "sec_10k_msft_2026-07-29.txt | no pages | chunk 223",
+        "sec_10k_nvda_2024-02-21.txt | no pages | chunk 229",
+        "sec_10k_msft_2025-07-30.txt | no pages | chunk 219",
+        "sec_10k_msft_2025-07-30.txt | no pages | chunk 206",
+        "sec_10k_nvda_2024-02-21.txt | no pages | chunk 395"
+      ]
+    },
+    {
+      "id": "ef-06",
+      "category": "exact_fact",
+      "seconds": 0.33,
+      "first_rank": null,
+      "recall": 0.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "sec_10k_msft_2026-07-29.txt | no pages | chunk 223",
+        "sec_10k_msft_2025-07-30.txt | no pages | chunk 219",
+        "sec_10k_nvda_2024-02-21.txt | no pages | chunk 229",
+        "sec_10k_nvda_2025-02-26.txt | no pages | chunk 250",
+        "sec_10k_msft_2026-07-29.txt | no pages | chunk 209"
+      ]
+    },
+    {
+      "id": "ef-07",
+      "category": "exact_fact",
+      "seconds": 0.25,
+      "first_rank": null,
+      "recall": 0.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "sec_10k_msft_2026-07-29.txt | no pages | chunk 223",
+        "sec_10k_msft_2025-07-30.txt | no pages | chunk 219",
+        "sec_10k_nvda_2026-02-25.txt | no pages | chunk 234",
+        "sec_10k_nvda_2024-02-21.txt | no pages | chunk 229",
+        "sec_10k_msft_2026-07-29.txt | no pages | chunk 209"
+      ]
+    },
+    {
+      "id": "ef-08",
+      "category": "exact_fact",
+      "seconds": 0.31,
+      "first_rank": 1,
+      "recall": 1.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "sec_10k_jpm_2024-02-16.txt | no pages | chunk 641",
+        "sec_10k_jpm_2025-02-14.txt | no pages | chunk 1112",
+        "sec_10k_jpm_2024-02-16.txt | no pages | chunk 1142",
+        "sec_10k_jpm_2026-02-13.txt | no pages | chunk 1096",
+        "sec_10k_jpm_2025-02-14.txt | no pages | chunk 636"
+      ]
+    },
+    {
+      "id": "ef-09",
+      "category": "exact_fact",
+      "seconds": 0.25,
+      "first_rank": 3,
+      "recall": 1.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "sec_10k_jpm_2024-02-16.txt | no pages | chunk 641",
+        "sec_10k_jpm_2025-02-14.txt | no pages | chunk 636",
+        "sec_10k_jpm_2025-02-14.txt | no pages | chunk 640",
+        "sec_10k_jpm_2026-02-13.txt | no pages | chunk 694",
+        "sec_10k_jpm_2026-02-13.txt | no pages | chunk 628"
+      ]
+    },
+    {
+      "id": "ef-10",
+      "category": "exact_fact",
+      "seconds": 0.28,
+      "first_rank": null,
+      "recall": 0.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "sec_10k_jpm_2026-02-13.txt | no pages | chunk 694",
+        "sec_10k_jpm_2025-02-14.txt | no pages | chunk 572",
+        "sec_10k_jpm_2026-02-13.txt | no pages | chunk 618",
+        "sec_10k_jpm_2025-02-14.txt | no pages | chunk 465",
+        "sec_10k_jpm_2024-02-16.txt | no pages | chunk 641"
+      ]
+    },
+    {
+      "id": "ef-11",
+      "category": "exact_fact",
+      "seconds": 0.33,
+      "first_rank": null,
+      "recall": 0.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "sec_10k_jpm_2026-02-13.txt | no pages | chunk 1657",
+        "sec_10k_jpm_2024-02-16.txt | no pages | chunk 826",
+        "sec_10k_jpm_2025-02-14.txt | no pages | chunk 821",
+        "sec_10k_jpm_2026-02-13.txt | no pages | chunk 807",
+        "sec_10k_jpm_2024-02-16.txt | no pages | chunk 1709"
+      ]
+    },
+    {
+      "id": "ef-12",
+      "category": "exact_fact",
+      "seconds": 0.21,
+      "first_rank": null,
+      "recall": 0.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "sec_10k_ko_2026-02-20.txt | no pages | chunk 382",
+        "sec_10k_ko_2026-02-20.txt | no pages | chunk 703",
+        "sec_10k_ko_2025-02-20.txt | no pages | chunk 452",
+        "sec_10k_ko_2026-02-20.txt | no pages | chunk 457",
+        "sec_10k_ko_2025-02-20.txt | no pages | chunk 693"
+      ]
+    },
+    {
+      "id": "ef-13",
+      "category": "exact_fact",
+      "seconds": 0.28,
+      "first_rank": 1,
+      "recall": 1.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "sec_10k_ko_2026-02-20.txt | no pages | chunk 382",
+        "sec_10k_ko_2026-02-20.txt | no pages | chunk 390",
+        "sec_10k_ko_2026-02-20.txt | no pages | chunk 703",
+        "sec_10k_ko_2026-02-20.txt | no pages | chunk 457",
+        "sec_10k_ko_2024-02-20.txt | no pages | chunk 395"
+      ]
+    },
+    {
+      "id": "co-01",
+      "category": "conceptual",
+      "seconds": 0.29,
+      "first_rank": null,
+      "recall": 0.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "fed_beige_book_20250604.pdf | p.3 | chunk 2",
+        "fed_beige_book_20250716.pdf | p.3 | chunk 2",
+        "fed_beige_book_20251015.pdf | p.3 | chunk 2",
+        "fed_beige_book_20251126.pdf | p.3 | chunk 2",
+        "fed_beige_book_20260304.pdf | p.3 | chunk 2"
+      ]
+    },
+    {
+      "id": "co-02",
+      "category": "conceptual",
+      "seconds": 0.28,
+      "first_rank": null,
+      "recall": 0.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "fed_beige_book_20250716.pdf | p.1 | chunk 0",
+        "fed_beige_book_20250115.pdf | p.3 | chunk 2",
+        "fed_beige_book_20250604.pdf | p.1 | chunk 0",
+        "fed_beige_book_20250305.pdf | p.3 | chunk 2",
+        "fed_beige_book_20250423.pdf | p.1 | chunk 0"
+      ]
+    },
+    {
+      "id": "co-03",
+      "category": "conceptual",
+      "seconds": 0.32,
+      "first_rank": null,
+      "recall": 0.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "fed_beige_book_20250716.pdf | p.1 | chunk 0",
+        "fed_beige_book_20251126.pdf | p.3 | chunk 3",
+        "fed_beige_book_20251015.pdf | p.1 | chunk 0",
+        "fed_beige_book_20260114.pdf | p.3 | chunk 3",
+        "fed_beige_book_20250903.pdf | p.1 | chunk 0"
+      ]
+    },
+    {
+      "id": "co-04",
+      "category": "conceptual",
+      "seconds": 0.26,
+      "first_rank": null,
+      "recall": 0.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "worldbank_global_economic_prospects_2026_06.pdf | p.95 | chunk 473",
+        "worldbank_global_economic_prospects_2026_01.pdf | p.106 | chunk 543",
+        "worldbank_global_economic_prospects_2026_01.pdf | p.1 | chunk 0",
+        "worldbank_global_economic_prospects_2026_06.pdf | p.1 | chunk 0",
+        "worldbank_global_economic_prospects_2026_01.pdf | p.58 | chunk 260"
+      ]
+    },
+    {
+      "id": "co-05",
+      "category": "conceptual",
+      "seconds": 0.34,
+      "first_rank": null,
+      "recall": 0.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "worldbank_global_economic_prospects_2026_01.pdf | p.106 | chunk 543",
+        "worldbank_global_economic_prospects_2026_01.pdf | p.109 | chunk 556",
+        "worldbank_global_economic_prospects_2026_06.pdf | p.96 | chunk 478",
+        "worldbank_global_economic_prospects_2026_01.pdf | p.79 | chunk 380",
+        "worldbank_global_economic_prospects_2026_01.pdf | p.1 | chunk 0"
+      ]
+    },
+    {
+      "id": "co-06",
+      "category": "conceptual",
+      "seconds": 0.3,
+      "first_rank": 2,
+      "recall": 1.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "worldbank_global_economic_prospects_2026_06.pdf | p.110 | chunk 543",
+        "worldbank_global_economic_prospects_2026_06.pdf | p.110 | chunk 540",
+        "worldbank_global_economic_prospects_2026_06.pdf | p.110 | chunk 539",
+        "worldbank_global_economic_prospects_2026_01.pdf | p.115 | chunk 598",
+        "worldbank_global_economic_prospects_2026_06.pdf | p.147 | chunk 738"
+      ]
+    },
+    {
+      "id": "co-07",
+      "category": "conceptual",
+      "seconds": 0.31,
+      "first_rank": 1,
+      "recall": 1.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "bis_annual_economic_report_2024.pdf | p.31 | chunk 110",
+        "bis_annual_economic_report_2024.pdf | p.31 | chunk 109",
+        "bis_annual_economic_report_2026.pdf | p.21 | chunk 54",
+        "bis_annual_economic_report_2025.pdf | p.42 | chunk 152",
+        "bis_annual_economic_report_2024.pdf | p.65 | chunk 267"
+      ]
+    },
+    {
+      "id": "co-08",
+      "category": "conceptual",
+      "seconds": 0.37,
+      "first_rank": 3,
+      "recall": 1.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "bis_annual_economic_report_2025.pdf | p.33 | chunk 111",
+        "bis_annual_economic_report_2024.pdf | p.17 | chunk 48",
+        "bis_annual_economic_report_2024.pdf | p.66 | chunk 270",
+        "bis_annual_economic_report_2026.pdf | p.14 | chunk 33",
+        "bis_annual_economic_report_2024.pdf | p.67 | chunk 274"
+      ]
+    },
+    {
+      "id": "co-09",
+      "category": "conceptual",
+      "seconds": 0.28,
+      "first_rank": null,
+      "recall": 0.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "fed_beige_book_20250716.pdf | p.1 | chunk 0",
+        "fed_beige_book_20250115.pdf | p.3 | chunk 2",
+        "fed_beige_book_20250115.pdf | p.26 | chunk 70",
+        "fed_beige_book_20250305.pdf | p.3 | chunk 2",
+        "fed_beige_book_20250305.pdf | p.26 | chunk 72"
+      ]
+    },
+    {
+      "id": "adv-01",
+      "category": "adversarial",
+      "seconds": 0.24,
+      "first_rank": null,
+      "recall": null,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "sec_10k_ko_2024-02-20.txt | no pages | chunk 711",
+        "sec_10k_nvda_2026-02-25.txt | no pages | chunk 246",
+        "sec_10k_ko_2026-02-20.txt | no pages | chunk 708",
+        "sec_10k_nvda_2024-02-21.txt | no pages | chunk 245",
+        "sec_10k_ko_2024-02-20.txt | no pages | chunk 709"
+      ]
+    },
+    {
+      "id": "adv-02",
+      "category": "adversarial",
+      "seconds": 0.24,
+      "first_rank": null,
+      "recall": null,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "sec_10k_msft_2026-07-29.txt | no pages | chunk 228",
+        "sec_10k_msft_2025-07-30.txt | no pages | chunk 223",
+        "sec_10k_msft_2024-07-30.txt | no pages | chunk 252",
+        "sec_10k_msft_2024-07-30.txt | no pages | chunk 313",
+        "sec_10k_msft_2025-07-30.txt | no pages | chunk 281"
+      ]
+    },
+    {
+      "id": "adv-03",
+      "category": "adversarial",
+      "seconds": 0.21,
+      "first_rank": null,
+      "recall": null,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "sec_10k_ko_2024-02-20.txt | no pages | chunk 439",
+        "sec_10k_ko_2026-02-20.txt | no pages | chunk 437",
+        "sec_10k_msft_2026-07-29.txt | no pages | chunk 207",
+        "sec_10k_jpm_2024-02-16.txt | no pages | chunk 861",
+        "sec_10k_msft_2026-07-29.txt | no pages | chunk 206"
+      ]
+    },
+    {
+      "id": "adv-04",
+      "category": "adversarial",
+      "seconds": 0.14,
+      "first_rank": null,
+      "recall": null,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "sec_10k_msft_2025-07-30.txt | no pages | chunk 207",
+        "sec_10k_nvda_2026-02-25.txt | no pages | chunk 246",
+        "sec_10k_nvda_2025-02-26.txt | no pages | chunk 250",
+        "sec_10k_nvda_2024-02-21.txt | no pages | chunk 229",
+        "sec_10k_nvda_2026-02-25.txt | no pages | chunk 234"
+      ]
+    },
+    {
+      "id": "adv-05",
+      "category": "adversarial",
+      "seconds": 0.22,
+      "first_rank": null,
+      "recall": null,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "sec_10k_jpm_2026-02-13.txt | no pages | chunk 451",
+        "bis_annual_economic_report_2025.pdf | p.70 | chunk 267",
+        "worldbank_global_economic_prospects_2026_06.pdf | p.116 | chunk 578",
+        "sec_10k_nvda_2026-02-25.txt | no pages | chunk 98",
+        "worldbank_global_economic_prospects_2026_01.pdf | p.55 | chunk 245"
+      ]
+    },
+    {
+      "id": "adv-06",
+      "category": "adversarial",
+      "seconds": 0.2,
+      "first_rank": null,
+      "recall": null,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "sec_10k_jpm_2025-02-14.txt | no pages | chunk 818",
+        "sec_10k_jpm_2024-02-16.txt | no pages | chunk 1714",
+        "sec_10k_jpm_2025-02-14.txt | no pages | chunk 819",
+        "sec_10k_jpm_2026-02-13.txt | no pages | chunk 1657",
+        "sec_10k_jpm_2024-02-16.txt | no pages | chunk 844"
+      ]
+    }
+  ],
+  "hybrid+rerank": [
+    {
+      "id": "ef-01",
+      "category": "exact_fact",
+      "seconds": 9.41,
+      "first_rank": 1,
+      "recall": 0.5,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "sec_10k_nvda_2024-02-21.txt | no pages | chunk 229",
+        "sec_10k_nvda_2024-02-21.txt | no pages | chunk 231",
+        "sec_10k_nvda_2024-02-21.txt | no pages | chunk 233",
+        "sec_10k_nvda_2026-02-25.txt | no pages | chunk 352",
+        "sec_10k_nvda_2024-02-21.txt | no pages | chunk 232"
+      ]
+    },
+    {
+      "id": "ef-02",
+      "category": "exact_fact",
+      "seconds": 2.03,
+      "first_rank": 2,
+      "recall": 1.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "sec_10k_nvda_2024-02-21.txt | no pages | chunk 231",
+        "sec_10k_nvda_2024-02-21.txt | no pages | chunk 229",
+        "sec_10k_nvda_2025-02-26.txt | no pages | chunk 250",
+        "sec_10k_nvda_2024-02-21.txt | no pages | chunk 245",
+        "sec_10k_nvda_2026-02-25.txt | no pages | chunk 234"
+      ]
+    },
+    {
+      "id": "ef-03",
+      "category": "exact_fact",
+      "seconds": 1.77,
+      "first_rank": null,
+      "recall": 0.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "sec_10k_nvda_2026-02-25.txt | no pages | chunk 352",
+        "sec_10k_nvda_2024-02-21.txt | no pages | chunk 229",
+        "sec_10k_nvda_2024-02-21.txt | no pages | chunk 231",
+        "sec_10k_nvda_2026-02-25.txt | no pages | chunk 392",
+        "sec_10k_nvda_2024-02-21.txt | no pages | chunk 232"
+      ]
+    },
+    {
+      "id": "ef-04",
+      "category": "exact_fact",
+      "seconds": 1.64,
+      "first_rank": 2,
+      "recall": 1.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "sec_10k_aapl_2023-11-03.txt | no pages | chunk 140",
+        "sec_10k_aapl_2023-11-03.txt | no pages | chunk 135",
+        "sec_10k_aapl_2023-11-03.txt | no pages | chunk 142",
+        "sec_10k_aapl_2024-11-01.txt | no pages | chunk 142",
+        "sec_10k_aapl_2024-11-01.txt | no pages | chunk 139"
+      ]
+    },
+    {
+      "id": "ef-05",
+      "category": "exact_fact",
+      "seconds": 1.66,
+      "first_rank": null,
+      "recall": 0.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "sec_10k_msft_2026-07-29.txt | no pages | chunk 223",
+        "sec_10k_msft_2025-07-30.txt | no pages | chunk 219",
+        "sec_10k_msft_2024-07-30.txt | no pages | chunk 248",
+        "sec_10k_nvda_2024-02-21.txt | no pages | chunk 395",
+        "sec_10k_msft_2024-07-30.txt | no pages | chunk 233"
+      ]
+    },
+    {
+      "id": "ef-06",
+      "category": "exact_fact",
+      "seconds": 1.57,
+      "first_rank": null,
+      "recall": 0.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "sec_10k_msft_2026-07-29.txt | no pages | chunk 223",
+        "sec_10k_msft_2025-07-30.txt | no pages | chunk 219",
+        "sec_10k_msft_2024-07-30.txt | no pages | chunk 248",
+        "sec_10k_msft_2026-07-29.txt | no pages | chunk 209",
+        "sec_10k_msft_2025-07-30.txt | no pages | chunk 206"
+      ]
+    },
+    {
+      "id": "ef-07",
+      "category": "exact_fact",
+      "seconds": 1.56,
+      "first_rank": null,
+      "recall": 0.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "sec_10k_msft_2026-07-29.txt | no pages | chunk 223",
+        "sec_10k_msft_2025-07-30.txt | no pages | chunk 219",
+        "sec_10k_msft_2024-07-30.txt | no pages | chunk 248",
+        "sec_10k_msft_2026-07-29.txt | no pages | chunk 209",
+        "sec_10k_msft_2025-07-30.txt | no pages | chunk 206"
+      ]
+    },
+    {
+      "id": "ef-08",
+      "category": "exact_fact",
+      "seconds": 1.49,
+      "first_rank": 1,
+      "recall": 1.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "sec_10k_jpm_2024-02-16.txt | no pages | chunk 641",
+        "sec_10k_jpm_2025-02-14.txt | no pages | chunk 1112",
+        "sec_10k_jpm_2024-02-16.txt | no pages | chunk 1142",
+        "sec_10k_jpm_2026-02-13.txt | no pages | chunk 1096",
+        "sec_10k_jpm_2025-02-14.txt | no pages | chunk 636"
+      ]
+    },
+    {
+      "id": "ef-09",
+      "category": "exact_fact",
+      "seconds": 1.78,
+      "first_rank": 1,
+      "recall": 1.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "sec_10k_jpm_2025-02-14.txt | no pages | chunk 640",
+        "sec_10k_jpm_2024-02-16.txt | no pages | chunk 641",
+        "sec_10k_jpm_2026-02-13.txt | no pages | chunk 628",
+        "sec_10k_jpm_2025-02-14.txt | no pages | chunk 636",
+        "sec_10k_jpm_2026-02-13.txt | no pages | chunk 694"
+      ]
+    },
+    {
+      "id": "ef-10",
+      "category": "exact_fact",
+      "seconds": 1.71,
+      "first_rank": null,
+      "recall": 0.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "sec_10k_jpm_2025-02-14.txt | no pages | chunk 651",
+        "sec_10k_jpm_2024-02-16.txt | no pages | chunk 641",
+        "sec_10k_jpm_2026-02-13.txt | no pages | chunk 694",
+        "sec_10k_jpm_2026-02-13.txt | no pages | chunk 625",
+        "sec_10k_jpm_2026-02-13.txt | no pages | chunk 618"
+      ]
+    },
+    {
+      "id": "ef-11",
+      "category": "exact_fact",
+      "seconds": 1.78,
+      "first_rank": 3,
+      "recall": 1.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "sec_10k_jpm_2024-02-16.txt | no pages | chunk 826",
+        "sec_10k_jpm_2026-02-13.txt | no pages | chunk 807",
+        "sec_10k_jpm_2025-02-14.txt | no pages | chunk 805",
+        "sec_10k_jpm_2025-02-14.txt | no pages | chunk 1671",
+        "sec_10k_jpm_2024-02-16.txt | no pages | chunk 1709"
+      ]
+    },
+    {
+      "id": "ef-12",
+      "category": "exact_fact",
+      "seconds": 2.0,
+      "first_rank": null,
+      "recall": 0.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "sec_10k_ko_2026-02-20.txt | no pages | chunk 457",
+        "sec_10k_ko_2025-02-20.txt | no pages | chunk 452",
+        "sec_10k_ko_2024-02-20.txt | no pages | chunk 467",
+        "sec_10k_ko_2024-02-20.txt | no pages | chunk 460",
+        "sec_10k_ko_2026-02-20.txt | no pages | chunk 703"
+      ]
+    },
+    {
+      "id": "ef-13",
+      "category": "exact_fact",
+      "seconds": 1.76,
+      "first_rank": 2,
+      "recall": 1.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "sec_10k_ko_2026-02-20.txt | no pages | chunk 424",
+        "sec_10k_ko_2026-02-20.txt | no pages | chunk 382",
+        "sec_10k_ko_2026-02-20.txt | no pages | chunk 400",
+        "sec_10k_ko_2026-02-20.txt | no pages | chunk 390",
+        "sec_10k_ko_2026-02-20.txt | no pages | chunk 403"
+      ]
+    },
+    {
+      "id": "co-01",
+      "category": "conceptual",
+      "seconds": 1.52,
+      "first_rank": null,
+      "recall": 0.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "fed_beige_book_20251126.pdf | p.3 | chunk 3",
+        "fed_beige_book_20260114.pdf | p.3 | chunk 3",
+        "fed_beige_book_20250604.pdf | p.3 | chunk 2",
+        "fed_beige_book_20250716.pdf | p.3 | chunk 2",
+        "fed_beige_book_20251015.pdf | p.3 | chunk 2"
+      ]
+    },
+    {
+      "id": "co-02",
+      "category": "conceptual",
+      "seconds": 1.24,
+      "first_rank": null,
+      "recall": 0.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "fed_beige_book_20250423.pdf | p.1 | chunk 0",
+        "fed_beige_book_20250604.pdf | p.1 | chunk 0",
+        "fed_beige_book_20250716.pdf | p.1 | chunk 0",
+        "fed_beige_book_20250305.pdf | p.1 | chunk 0",
+        "fed_beige_book_20250115.pdf | p.1 | chunk 0"
+      ]
+    },
+    {
+      "id": "co-03",
+      "category": "conceptual",
+      "seconds": 1.97,
+      "first_rank": null,
+      "recall": 0.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "fed_beige_book_20251126.pdf | p.1 | chunk 0",
+        "fed_beige_book_20250423.pdf | p.1 | chunk 0",
+        "fed_beige_book_20250716.pdf | p.1 | chunk 0",
+        "fed_beige_book_20250903.pdf | p.1 | chunk 0",
+        "fed_beige_book_20251015.pdf | p.1 | chunk 0"
+      ]
+    },
+    {
+      "id": "co-04",
+      "category": "conceptual",
+      "seconds": 1.67,
+      "first_rank": 2,
+      "recall": 0.5,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "worldbank_global_economic_prospects_2026_06.pdf | p.95 | chunk 473",
+        "worldbank_global_economic_prospects_2026_01.pdf | p.27 | chunk 61",
+        "worldbank_global_economic_prospects_2026_01.pdf | p.106 | chunk 543",
+        "worldbank_global_economic_prospects_2026_01.pdf | p.58 | chunk 260",
+        "worldbank_global_economic_prospects_2026_01.pdf | p.1 | chunk 0"
+      ]
+    },
+    {
+      "id": "co-05",
+      "category": "conceptual",
+      "seconds": 1.66,
+      "first_rank": null,
+      "recall": 0.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "worldbank_global_economic_prospects_2026_01.pdf | p.79 | chunk 380",
+        "worldbank_global_economic_prospects_2026_06.pdf | p.95 | chunk 473",
+        "worldbank_global_economic_prospects_2026_06.pdf | p.96 | chunk 478",
+        "worldbank_global_economic_prospects_2026_01.pdf | p.106 | chunk 543",
+        "worldbank_global_economic_prospects_2026_01.pdf | p.109 | chunk 556"
+      ]
+    },
+    {
+      "id": "co-06",
+      "category": "conceptual",
+      "seconds": 1.67,
+      "first_rank": 1,
+      "recall": 0.5,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "worldbank_global_economic_prospects_2026_06.pdf | p.110 | chunk 540",
+        "worldbank_global_economic_prospects_2026_06.pdf | p.110 | chunk 543",
+        "worldbank_global_economic_prospects_2026_01.pdf | p.115 | chunk 598",
+        "worldbank_global_economic_prospects_2026_06.pdf | p.140 | chunk 713",
+        "bis_annual_economic_report_2026.pdf | p.56 | chunk 192"
+      ]
+    },
+    {
+      "id": "co-07",
+      "category": "conceptual",
+      "seconds": 1.56,
+      "first_rank": 1,
+      "recall": 1.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "bis_annual_economic_report_2024.pdf | p.31 | chunk 110",
+        "bis_annual_economic_report_2026.pdf | p.21 | chunk 54",
+        "bis_annual_economic_report_2024.pdf | p.64 | chunk 260",
+        "bis_annual_economic_report_2024.pdf | p.65 | chunk 266",
+        "bis_annual_economic_report_2024.pdf | p.32 | chunk 115"
+      ]
+    },
+    {
+      "id": "co-08",
+      "category": "conceptual",
+      "seconds": 1.66,
+      "first_rank": 4,
+      "recall": 1.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "bis_annual_economic_report_2024.pdf | p.94 | chunk 404",
+        "bis_annual_economic_report_2024.pdf | p.67 | chunk 274",
+        "bis_annual_economic_report_2025.pdf | p.114 | chunk 432",
+        "bis_annual_economic_report_2024.pdf | p.66 | chunk 270",
+        "bis_annual_economic_report_2026.pdf | p.51 | chunk 173"
+      ]
+    },
+    {
+      "id": "co-09",
+      "category": "conceptual",
+      "seconds": 1.18,
+      "first_rank": null,
+      "recall": 0.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "fed_beige_book_20250716.pdf | p.1 | chunk 0",
+        "fed_beige_book_20250115.pdf | p.3 | chunk 2",
+        "fed_beige_book_20250305.pdf | p.3 | chunk 2",
+        "fed_beige_book_20250423.pdf | p.3 | chunk 2",
+        "fed_beige_book_20250604.pdf | p.3 | chunk 2"
+      ]
+    },
+    {
+      "id": "adv-01",
+      "category": "adversarial",
+      "seconds": 1.6,
+      "first_rank": null,
+      "recall": null,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "sec_10k_aapl_2024-11-01.txt | no pages | chunk 222",
+        "sec_10k_ko_2024-02-20.txt | no pages | chunk 711",
+        "sec_10k_nvda_2024-02-21.txt | no pages | chunk 245",
+        "sec_10k_ko_2024-02-20.txt | no pages | chunk 709",
+        "sec_10k_ko_2025-02-20.txt | no pages | chunk 698"
+      ]
+    },
+    {
+      "id": "adv-02",
+      "category": "adversarial",
+      "seconds": 1.59,
+      "first_rank": null,
+      "recall": null,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "sec_10k_msft_2026-07-29.txt | no pages | chunk 228",
+        "sec_10k_nvda_2025-02-26.txt | no pages | chunk 266",
+        "sec_10k_nvda_2026-02-25.txt | no pages | chunk 251",
+        "sec_10k_msft_2025-07-30.txt | no pages | chunk 223",
+        "sec_10k_msft_2024-07-30.txt | no pages | chunk 313"
+      ]
+    },
+    {
+      "id": "adv-03",
+      "category": "adversarial",
+      "seconds": 1.52,
+      "first_rank": null,
+      "recall": null,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "sec_10k_ko_2024-02-20.txt | no pages | chunk 439",
+        "sec_10k_ko_2026-02-20.txt | no pages | chunk 437",
+        "sec_10k_jpm_2024-02-16.txt | no pages | chunk 861",
+        "sec_10k_msft_2026-07-29.txt | no pages | chunk 207",
+        "sec_10k_jpm_2024-02-16.txt | no pages | chunk 1659"
+      ]
+    },
+    {
+      "id": "adv-04",
+      "category": "adversarial",
+      "seconds": 1.35,
+      "first_rank": null,
+      "recall": null,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "sec_10k_msft_2025-07-30.txt | no pages | chunk 207",
+        "sec_10k_msft_2024-07-30.txt | no pages | chunk 249",
+        "sec_10k_nvda_2025-02-26.txt | no pages | chunk 250",
+        "sec_10k_nvda_2026-02-25.txt | no pages | chunk 234",
+        "sec_10k_msft_2026-07-29.txt | no pages | chunk 225"
+      ]
+    },
+    {
+      "id": "adv-05",
+      "category": "adversarial",
+      "seconds": 1.54,
+      "first_rank": null,
+      "recall": null,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "sec_10k_nvda_2026-02-25.txt | no pages | chunk 98",
+        "bis_annual_economic_report_2025.pdf | p.67 | chunk 251",
+        "bis_annual_economic_report_2025.pdf | p.70 | chunk 267",
+        "sec_10k_jpm_2026-02-13.txt | no pages | chunk 451",
+        "sec_10k_ko_2026-02-20.txt | no pages | chunk 203"
+      ]
+    },
+    {
+      "id": "adv-06",
+      "category": "adversarial",
+      "seconds": 1.43,
+      "first_rank": null,
+      "recall": null,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "sec_10k_jpm_2025-02-14.txt | no pages | chunk 1670",
+        "sec_10k_jpm_2024-02-16.txt | no pages | chunk 1714",
+        "sec_10k_jpm_2025-02-14.txt | no pages | chunk 819",
+        "sec_10k_jpm_2026-02-13.txt | no pages | chunk 1657",
+        "sec_10k_jpm_2025-02-14.txt | no pages | chunk 818"
+      ]
+    }
+  ],
+  "hybrid+filter": [
+    {
+      "id": "ef-01",
+      "category": "exact_fact",
+      "seconds": 165.73,
+      "first_rank": 1,
+      "recall": 0.5,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "sec_10k_nvda_2024-02-21.txt | no pages | chunk 229",
+        "sec_10k_nvda_2024-02-21.txt | no pages | chunk 232",
+        "sec_10k_nvda_2024-02-21.txt | no pages | chunk 245",
+        "sec_10k_nvda_2024-02-21.txt | no pages | chunk 231",
+        "sec_10k_nvda_2024-02-21.txt | no pages | chunk 358"
+      ]
+    },
+    {
+      "id": "ef-02",
+      "category": "exact_fact",
+      "seconds": 1.17,
+      "first_rank": 1,
+      "recall": 1.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "sec_10k_nvda_2024-02-21.txt | no pages | chunk 229",
+        "sec_10k_nvda_2024-02-21.txt | no pages | chunk 231",
+        "sec_10k_nvda_2024-02-21.txt | no pages | chunk 245",
+        "sec_10k_nvda_2025-02-26.txt | no pages | chunk 250",
+        "sec_10k_nvda_2025-02-26.txt | no pages | chunk 236"
+      ]
+    },
+    {
+      "id": "ef-03",
+      "category": "exact_fact",
+      "seconds": 0.88,
+      "first_rank": 2,
+      "recall": 0.5,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "sec_10k_nvda_2026-02-25.txt | no pages | chunk 352",
+        "sec_10k_nvda_2026-02-25.txt | no pages | chunk 234",
+        "sec_10k_nvda_2026-02-25.txt | no pages | chunk 392",
+        "sec_10k_nvda_2026-02-25.txt | no pages | chunk 300",
+        "sec_10k_nvda_2026-02-25.txt | no pages | chunk 337"
+      ]
+    },
+    {
+      "id": "ef-04",
+      "category": "exact_fact",
+      "seconds": 1.25,
+      "first_rank": 3,
+      "recall": 1.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "sec_10k_aapl_2023-11-03.txt | no pages | chunk 142",
+        "sec_10k_aapl_2023-11-03.txt | no pages | chunk 145",
+        "sec_10k_aapl_2023-11-03.txt | no pages | chunk 135",
+        "sec_10k_aapl_2024-11-01.txt | no pages | chunk 135",
+        "sec_10k_aapl_2023-11-03.txt | no pages | chunk 140"
+      ]
+    },
+    {
+      "id": "ef-05",
+      "category": "exact_fact",
+      "seconds": 0.83,
+      "first_rank": null,
+      "recall": 0.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "sec_10k_msft_2025-07-30.txt | no pages | chunk 219",
+        "sec_10k_msft_2025-07-30.txt | no pages | chunk 206",
+        "sec_10k_msft_2024-07-30.txt | no pages | chunk 233",
+        "sec_10k_msft_2024-07-30.txt | no pages | chunk 248",
+        "sec_10k_msft_2024-07-30.txt | no pages | chunk 256"
+      ]
+    },
+    {
+      "id": "ef-06",
+      "category": "exact_fact",
+      "seconds": 0.85,
+      "first_rank": 5,
+      "recall": 1.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "sec_10k_msft_2026-07-29.txt | no pages | chunk 223",
+        "sec_10k_msft_2025-07-30.txt | no pages | chunk 219",
+        "sec_10k_msft_2026-07-29.txt | no pages | chunk 209",
+        "sec_10k_msft_2025-07-30.txt | no pages | chunk 206",
+        "sec_10k_msft_2025-07-30.txt | no pages | chunk 216"
+      ]
+    },
+    {
+      "id": "ef-07",
+      "category": "exact_fact",
+      "seconds": 0.78,
+      "first_rank": 3,
+      "recall": 1.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "sec_10k_msft_2026-07-29.txt | no pages | chunk 223",
+        "sec_10k_msft_2026-07-29.txt | no pages | chunk 209",
+        "sec_10k_msft_2026-07-29.txt | no pages | chunk 219",
+        "sec_10k_msft_2026-07-29.txt | no pages | chunk 387",
+        "sec_10k_msft_2026-07-29.txt | no pages | chunk 220"
+      ]
+    },
+    {
+      "id": "ef-08",
+      "category": "exact_fact",
+      "seconds": 1.24,
+      "first_rank": 1,
+      "recall": 1.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "sec_10k_jpm_2024-02-16.txt | no pages | chunk 641",
+        "sec_10k_jpm_2024-02-16.txt | no pages | chunk 1142",
+        "sec_10k_jpm_2024-02-16.txt | no pages | chunk 625",
+        "sec_10k_jpm_2024-02-16.txt | no pages | chunk 638",
+        "sec_10k_jpm_2024-02-16.txt | no pages | chunk 1675"
+      ]
+    },
+    {
+      "id": "ef-09",
+      "category": "exact_fact",
+      "seconds": 1.37,
+      "first_rank": 2,
+      "recall": 1.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "sec_10k_jpm_2024-02-16.txt | no pages | chunk 641",
+        "sec_10k_jpm_2025-02-14.txt | no pages | chunk 640",
+        "sec_10k_jpm_2025-02-14.txt | no pages | chunk 636",
+        "sec_10k_jpm_2025-02-14.txt | no pages | chunk 628",
+        "sec_10k_jpm_2025-02-14.txt | no pages | chunk 572"
+      ]
+    },
+    {
+      "id": "ef-10",
+      "category": "exact_fact",
+      "seconds": 1.4,
+      "first_rank": null,
+      "recall": 0.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "sec_10k_jpm_2026-02-13.txt | no pages | chunk 694",
+        "sec_10k_jpm_2025-02-14.txt | no pages | chunk 572",
+        "sec_10k_jpm_2026-02-13.txt | no pages | chunk 618",
+        "sec_10k_jpm_2025-02-14.txt | no pages | chunk 465",
+        "sec_10k_jpm_2025-02-14.txt | no pages | chunk 651"
+      ]
+    },
+    {
+      "id": "ef-11",
+      "category": "exact_fact",
+      "seconds": 1.29,
+      "first_rank": null,
+      "recall": 0.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "sec_10k_jpm_2024-02-16.txt | no pages | chunk 826",
+        "sec_10k_jpm_2025-02-14.txt | no pages | chunk 821",
+        "sec_10k_jpm_2024-02-16.txt | no pages | chunk 1709",
+        "sec_10k_jpm_2024-02-16.txt | no pages | chunk 837",
+        "sec_10k_jpm_2025-02-14.txt | no pages | chunk 1671"
+      ]
+    },
+    {
+      "id": "ef-12",
+      "category": "exact_fact",
+      "seconds": 0.91,
+      "first_rank": null,
+      "recall": 0.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "sec_10k_ko_2025-02-20.txt | no pages | chunk 452",
+        "sec_10k_ko_2025-02-20.txt | no pages | chunk 693",
+        "sec_10k_ko_2024-02-20.txt | no pages | chunk 460",
+        "sec_10k_ko_2024-02-20.txt | no pages | chunk 390",
+        "sec_10k_ko_2024-02-20.txt | no pages | chunk 396"
+      ]
+    },
+    {
+      "id": "ef-13",
+      "category": "exact_fact",
+      "seconds": 1.12,
+      "first_rank": 1,
+      "recall": 1.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "sec_10k_ko_2026-02-20.txt | no pages | chunk 382",
+        "sec_10k_ko_2026-02-20.txt | no pages | chunk 703",
+        "sec_10k_ko_2026-02-20.txt | no pages | chunk 390",
+        "sec_10k_ko_2026-02-20.txt | no pages | chunk 457",
+        "sec_10k_ko_2024-02-20.txt | no pages | chunk 395"
+      ]
+    },
+    {
+      "id": "co-01",
+      "category": "conceptual",
+      "seconds": 1.07,
+      "first_rank": null,
+      "recall": 0.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "fed_beige_book_20250115.pdf | p.3 | chunk 2",
+        "fed_beige_book_20250115.pdf | p.1 | chunk 0",
+        "fed_beige_book_20250115.pdf | p.4 | chunk 6",
+        "bis_annual_economic_report_2024.pdf | p.138 | chunk 580",
+        "fed_beige_book_20250115.pdf | p.3 | chunk 3"
+      ]
+    },
+    {
+      "id": "co-02",
+      "category": "conceptual",
+      "seconds": 0.88,
+      "first_rank": null,
+      "recall": 0.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "fed_beige_book_20250604.pdf | p.3 | chunk 2",
+        "bis_annual_economic_report_2024.pdf | p.138 | chunk 580",
+        "fed_beige_book_20250716.pdf | p.3 | chunk 2",
+        "fed_beige_book_20250716.pdf | p.1 | chunk 0",
+        "fed_beige_book_20250604.pdf | p.1 | chunk 0"
+      ]
+    },
+    {
+      "id": "co-03",
+      "category": "conceptual",
+      "seconds": 0.84,
+      "first_rank": null,
+      "recall": 0.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "fed_beige_book_20250716.pdf | p.1 | chunk 0",
+        "fed_beige_book_20250604.pdf | p.3 | chunk 3",
+        "fed_beige_book_20250604.pdf | p.1 | chunk 0",
+        "fed_beige_book_20250716.pdf | p.3 | chunk 3",
+        "bis_annual_economic_report_2024.pdf | p.138 | chunk 580"
+      ]
+    },
+    {
+      "id": "co-04",
+      "category": "conceptual",
+      "seconds": 1.79,
+      "first_rank": null,
+      "recall": 0.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "worldbank_global_economic_prospects_2026_06.pdf | p.95 | chunk 473",
+        "worldbank_global_economic_prospects_2026_01.pdf | p.106 | chunk 543",
+        "worldbank_global_economic_prospects_2026_01.pdf | p.1 | chunk 0",
+        "worldbank_global_economic_prospects_2026_06.pdf | p.1 | chunk 0",
+        "worldbank_global_economic_prospects_2026_01.pdf | p.58 | chunk 260"
+      ]
+    },
+    {
+      "id": "co-05",
+      "category": "conceptual",
+      "seconds": 1.0,
+      "first_rank": null,
+      "recall": 0.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "worldbank_global_economic_prospects_2026_01.pdf | p.106 | chunk 543",
+        "worldbank_global_economic_prospects_2026_01.pdf | p.109 | chunk 556",
+        "worldbank_global_economic_prospects_2026_06.pdf | p.96 | chunk 478",
+        "worldbank_global_economic_prospects_2026_01.pdf | p.79 | chunk 380",
+        "worldbank_global_economic_prospects_2026_01.pdf | p.1 | chunk 0"
+      ]
+    },
+    {
+      "id": "co-06",
+      "category": "conceptual",
+      "seconds": 0.73,
+      "first_rank": 2,
+      "recall": 1.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "worldbank_global_economic_prospects_2026_06.pdf | p.110 | chunk 543",
+        "worldbank_global_economic_prospects_2026_06.pdf | p.110 | chunk 540",
+        "worldbank_global_economic_prospects_2026_06.pdf | p.110 | chunk 539",
+        "worldbank_global_economic_prospects_2026_01.pdf | p.115 | chunk 598",
+        "worldbank_global_economic_prospects_2026_06.pdf | p.147 | chunk 738"
+      ]
+    },
+    {
+      "id": "co-07",
+      "category": "conceptual",
+      "seconds": 1.1,
+      "first_rank": 1,
+      "recall": 1.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "bis_annual_economic_report_2024.pdf | p.31 | chunk 110",
+        "bis_annual_economic_report_2024.pdf | p.31 | chunk 109",
+        "bis_annual_economic_report_2026.pdf | p.21 | chunk 54",
+        "bis_annual_economic_report_2025.pdf | p.42 | chunk 152",
+        "bis_annual_economic_report_2024.pdf | p.65 | chunk 267"
+      ]
+    },
+    {
+      "id": "co-08",
+      "category": "conceptual",
+      "seconds": 1.0,
+      "first_rank": 3,
+      "recall": 1.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "bis_annual_economic_report_2025.pdf | p.33 | chunk 111",
+        "bis_annual_economic_report_2024.pdf | p.17 | chunk 48",
+        "bis_annual_economic_report_2024.pdf | p.66 | chunk 270",
+        "bis_annual_economic_report_2026.pdf | p.14 | chunk 33",
+        "bis_annual_economic_report_2024.pdf | p.67 | chunk 274"
+      ]
+    },
+    {
+      "id": "co-09",
+      "category": "conceptual",
+      "seconds": 1.15,
+      "first_rank": null,
+      "recall": 0.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "fed_beige_book_20250716.pdf | p.1 | chunk 0",
+        "fed_beige_book_20250115.pdf | p.3 | chunk 2",
+        "fed_beige_book_20250115.pdf | p.26 | chunk 70",
+        "fed_beige_book_20250305.pdf | p.3 | chunk 2",
+        "fed_beige_book_20250305.pdf | p.26 | chunk 72"
+      ]
+    },
+    {
+      "id": "adv-01",
+      "category": "adversarial",
+      "seconds": 0.59,
+      "first_rank": null,
+      "recall": null,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "sec_10k_ko_2024-02-20.txt | no pages | chunk 711",
+        "sec_10k_nvda_2026-02-25.txt | no pages | chunk 246",
+        "sec_10k_ko_2026-02-20.txt | no pages | chunk 708",
+        "sec_10k_nvda_2024-02-21.txt | no pages | chunk 245",
+        "sec_10k_ko_2024-02-20.txt | no pages | chunk 709"
+      ]
+    },
+    {
+      "id": "adv-02",
+      "category": "adversarial",
+      "seconds": 0.49,
+      "first_rank": null,
+      "recall": null,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "sec_10k_msft_2026-07-29.txt | no pages | chunk 228",
+        "sec_10k_msft_2025-07-30.txt | no pages | chunk 223",
+        "sec_10k_msft_2024-07-30.txt | no pages | chunk 252",
+        "sec_10k_msft_2024-07-30.txt | no pages | chunk 313",
+        "sec_10k_msft_2025-07-30.txt | no pages | chunk 281"
+      ]
+    },
+    {
+      "id": "adv-03",
+      "category": "adversarial",
+      "seconds": 0.43,
+      "first_rank": null,
+      "recall": null,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "sec_10k_ko_2024-02-20.txt | no pages | chunk 439",
+        "sec_10k_ko_2026-02-20.txt | no pages | chunk 437",
+        "sec_10k_msft_2026-07-29.txt | no pages | chunk 207",
+        "sec_10k_jpm_2024-02-16.txt | no pages | chunk 861",
+        "sec_10k_msft_2026-07-29.txt | no pages | chunk 206"
+      ]
+    },
+    {
+      "id": "adv-04",
+      "category": "adversarial",
+      "seconds": 0.27,
+      "first_rank": null,
+      "recall": null,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "sec_10k_msft_2025-07-30.txt | no pages | chunk 207",
+        "sec_10k_nvda_2026-02-25.txt | no pages | chunk 246",
+        "sec_10k_nvda_2025-02-26.txt | no pages | chunk 250",
+        "sec_10k_nvda_2024-02-21.txt | no pages | chunk 229",
+        "sec_10k_nvda_2026-02-25.txt | no pages | chunk 234"
+      ]
+    },
+    {
+      "id": "adv-05",
+      "category": "adversarial",
+      "seconds": 0.32,
+      "first_rank": null,
+      "recall": null,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "sec_10k_jpm_2026-02-13.txt | no pages | chunk 451",
+        "bis_annual_economic_report_2025.pdf | p.70 | chunk 267",
+        "worldbank_global_economic_prospects_2026_06.pdf | p.116 | chunk 578",
+        "sec_10k_nvda_2026-02-25.txt | no pages | chunk 98",
+        "worldbank_global_economic_prospects_2026_01.pdf | p.55 | chunk 245"
+      ]
+    },
+    {
+      "id": "adv-06",
+      "category": "adversarial",
+      "seconds": 0.31,
+      "first_rank": null,
+      "recall": null,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "sec_10k_jpm_2025-02-14.txt | no pages | chunk 818",
+        "sec_10k_jpm_2024-02-16.txt | no pages | chunk 1714",
+        "sec_10k_jpm_2025-02-14.txt | no pages | chunk 819",
+        "sec_10k_jpm_2026-02-13.txt | no pages | chunk 1657",
+        "sec_10k_jpm_2024-02-16.txt | no pages | chunk 844"
+      ]
+    }
+  ],
+  "hybrid+filter+rerank": [
+    {
+      "id": "ef-01",
+      "category": "exact_fact",
+      "seconds": 2.0,
+      "first_rank": 1,
+      "recall": 0.5,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "sec_10k_nvda_2024-02-21.txt | no pages | chunk 229",
+        "sec_10k_nvda_2024-02-21.txt | no pages | chunk 231",
+        "sec_10k_nvda_2024-02-21.txt | no pages | chunk 233",
+        "sec_10k_nvda_2024-02-21.txt | no pages | chunk 232",
+        "sec_10k_nvda_2024-02-21.txt | no pages | chunk 392"
+      ]
+    },
+    {
+      "id": "ef-02",
+      "category": "exact_fact",
+      "seconds": 1.68,
+      "first_rank": 2,
+      "recall": 1.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "sec_10k_nvda_2024-02-21.txt | no pages | chunk 231",
+        "sec_10k_nvda_2024-02-21.txt | no pages | chunk 229",
+        "sec_10k_nvda_2025-02-26.txt | no pages | chunk 250",
+        "sec_10k_nvda_2024-02-21.txt | no pages | chunk 245",
+        "sec_10k_nvda_2024-02-21.txt | no pages | chunk 395"
+      ]
+    },
+    {
+      "id": "ef-03",
+      "category": "exact_fact",
+      "seconds": 1.64,
+      "first_rank": null,
+      "recall": 0.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "sec_10k_nvda_2026-02-25.txt | no pages | chunk 352",
+        "sec_10k_nvda_2026-02-25.txt | no pages | chunk 391",
+        "sec_10k_nvda_2026-02-25.txt | no pages | chunk 392",
+        "sec_10k_nvda_2026-02-25.txt | no pages | chunk 388",
+        "sec_10k_nvda_2026-02-25.txt | no pages | chunk 227"
+      ]
+    },
+    {
+      "id": "ef-04",
+      "category": "exact_fact",
+      "seconds": 1.64,
+      "first_rank": 2,
+      "recall": 1.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "sec_10k_aapl_2023-11-03.txt | no pages | chunk 140",
+        "sec_10k_aapl_2023-11-03.txt | no pages | chunk 135",
+        "sec_10k_aapl_2023-11-03.txt | no pages | chunk 142",
+        "sec_10k_aapl_2024-11-01.txt | no pages | chunk 142",
+        "sec_10k_aapl_2024-11-01.txt | no pages | chunk 139"
+      ]
+    },
+    {
+      "id": "ef-05",
+      "category": "exact_fact",
+      "seconds": 1.81,
+      "first_rank": null,
+      "recall": 0.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "sec_10k_msft_2025-07-30.txt | no pages | chunk 219",
+        "sec_10k_msft_2024-07-30.txt | no pages | chunk 248",
+        "sec_10k_msft_2025-07-30.txt | no pages | chunk 216",
+        "sec_10k_msft_2024-07-30.txt | no pages | chunk 233",
+        "sec_10k_msft_2025-07-30.txt | no pages | chunk 206"
+      ]
+    },
+    {
+      "id": "ef-06",
+      "category": "exact_fact",
+      "seconds": 1.78,
+      "first_rank": 3,
+      "recall": 1.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "sec_10k_msft_2026-07-29.txt | no pages | chunk 223",
+        "sec_10k_msft_2025-07-30.txt | no pages | chunk 219",
+        "sec_10k_msft_2025-07-30.txt | no pages | chunk 216",
+        "sec_10k_msft_2025-07-30.txt | no pages | chunk 373",
+        "sec_10k_msft_2026-07-29.txt | no pages | chunk 387"
+      ]
+    },
+    {
+      "id": "ef-07",
+      "category": "exact_fact",
+      "seconds": 1.61,
+      "first_rank": 4,
+      "recall": 1.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "sec_10k_msft_2026-07-29.txt | no pages | chunk 223",
+        "sec_10k_msft_2026-07-29.txt | no pages | chunk 387",
+        "sec_10k_msft_2026-07-29.txt | no pages | chunk 209",
+        "sec_10k_msft_2026-07-29.txt | no pages | chunk 219",
+        "sec_10k_msft_2026-07-29.txt | no pages | chunk 386"
+      ]
+    },
+    {
+      "id": "ef-08",
+      "category": "exact_fact",
+      "seconds": 1.69,
+      "first_rank": 1,
+      "recall": 1.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "sec_10k_jpm_2024-02-16.txt | no pages | chunk 641",
+        "sec_10k_jpm_2024-02-16.txt | no pages | chunk 1142",
+        "sec_10k_jpm_2024-02-16.txt | no pages | chunk 638",
+        "sec_10k_jpm_2024-02-16.txt | no pages | chunk 1673",
+        "sec_10k_jpm_2024-02-16.txt | no pages | chunk 1144"
+      ]
+    },
+    {
+      "id": "ef-09",
+      "category": "exact_fact",
+      "seconds": 1.71,
+      "first_rank": 1,
+      "recall": 1.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "sec_10k_jpm_2025-02-14.txt | no pages | chunk 640",
+        "sec_10k_jpm_2024-02-16.txt | no pages | chunk 641",
+        "sec_10k_jpm_2025-02-14.txt | no pages | chunk 636",
+        "sec_10k_jpm_2025-02-14.txt | no pages | chunk 697",
+        "sec_10k_jpm_2025-02-14.txt | no pages | chunk 770"
+      ]
+    },
+    {
+      "id": "ef-10",
+      "category": "exact_fact",
+      "seconds": 1.77,
+      "first_rank": null,
+      "recall": 0.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "sec_10k_jpm_2025-02-14.txt | no pages | chunk 651",
+        "sec_10k_jpm_2026-02-13.txt | no pages | chunk 694",
+        "sec_10k_jpm_2026-02-13.txt | no pages | chunk 625",
+        "sec_10k_jpm_2026-02-13.txt | no pages | chunk 618",
+        "sec_10k_jpm_2025-02-14.txt | no pages | chunk 628"
+      ]
+    },
+    {
+      "id": "ef-11",
+      "category": "exact_fact",
+      "seconds": 1.94,
+      "first_rank": null,
+      "recall": 0.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "sec_10k_jpm_2024-02-16.txt | no pages | chunk 826",
+        "sec_10k_jpm_2025-02-14.txt | no pages | chunk 1671",
+        "sec_10k_jpm_2024-02-16.txt | no pages | chunk 1709",
+        "sec_10k_jpm_2025-02-14.txt | no pages | chunk 848",
+        "sec_10k_jpm_2025-02-14.txt | no pages | chunk 821"
+      ]
+    },
+    {
+      "id": "ef-12",
+      "category": "exact_fact",
+      "seconds": 1.95,
+      "first_rank": null,
+      "recall": 0.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "sec_10k_ko_2025-02-20.txt | no pages | chunk 452",
+        "sec_10k_ko_2024-02-20.txt | no pages | chunk 467",
+        "sec_10k_ko_2024-02-20.txt | no pages | chunk 460",
+        "sec_10k_ko_2024-02-20.txt | no pages | chunk 390",
+        "sec_10k_ko_2025-02-20.txt | no pages | chunk 693"
+      ]
+    },
+    {
+      "id": "ef-13",
+      "category": "exact_fact",
+      "seconds": 2.98,
+      "first_rank": 2,
+      "recall": 1.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "sec_10k_ko_2026-02-20.txt | no pages | chunk 424",
+        "sec_10k_ko_2026-02-20.txt | no pages | chunk 382",
+        "sec_10k_ko_2026-02-20.txt | no pages | chunk 400",
+        "sec_10k_ko_2026-02-20.txt | no pages | chunk 390",
+        "sec_10k_ko_2026-02-20.txt | no pages | chunk 403"
+      ]
+    },
+    {
+      "id": "co-01",
+      "category": "conceptual",
+      "seconds": 2.26,
+      "first_rank": null,
+      "recall": 0.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "fed_beige_book_20250115.pdf | p.3 | chunk 3",
+        "fed_beige_book_20250115.pdf | p.3 | chunk 2",
+        "bis_annual_economic_report_2024.pdf | p.138 | chunk 580",
+        "fed_beige_book_20250115.pdf | p.9 | chunk 18",
+        "fed_beige_book_20250115.pdf | p.1 | chunk 0"
+      ]
+    },
+    {
+      "id": "co-02",
+      "category": "conceptual",
+      "seconds": 1.82,
+      "first_rank": null,
+      "recall": 0.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "bis_annual_economic_report_2024.pdf | p.138 | chunk 580",
+        "fed_beige_book_20250604.pdf | p.1 | chunk 0",
+        "fed_beige_book_20250716.pdf | p.1 | chunk 0",
+        "fed_beige_book_20250604.pdf | p.3 | chunk 2",
+        "fed_beige_book_20250716.pdf | p.3 | chunk 2"
+      ]
+    },
+    {
+      "id": "co-03",
+      "category": "conceptual",
+      "seconds": 1.92,
+      "first_rank": null,
+      "recall": 0.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "bis_annual_economic_report_2024.pdf | p.138 | chunk 580",
+        "fed_beige_book_20250604.pdf | p.1 | chunk 0",
+        "fed_beige_book_20250716.pdf | p.1 | chunk 0",
+        "fed_beige_book_20250716.pdf | p.38 | chunk 105",
+        "fed_beige_book_20250604.pdf | p.3 | chunk 2"
+      ]
+    },
+    {
+      "id": "co-04",
+      "category": "conceptual",
+      "seconds": 1.94,
+      "first_rank": 2,
+      "recall": 0.5,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "worldbank_global_economic_prospects_2026_06.pdf | p.95 | chunk 473",
+        "worldbank_global_economic_prospects_2026_01.pdf | p.27 | chunk 61",
+        "worldbank_global_economic_prospects_2026_01.pdf | p.106 | chunk 543",
+        "worldbank_global_economic_prospects_2026_01.pdf | p.58 | chunk 260",
+        "worldbank_global_economic_prospects_2026_01.pdf | p.1 | chunk 0"
+      ]
+    },
+    {
+      "id": "co-05",
+      "category": "conceptual",
+      "seconds": 1.81,
+      "first_rank": null,
+      "recall": 0.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "worldbank_global_economic_prospects_2026_01.pdf | p.79 | chunk 380",
+        "worldbank_global_economic_prospects_2026_06.pdf | p.95 | chunk 473",
+        "worldbank_global_economic_prospects_2026_06.pdf | p.96 | chunk 478",
+        "worldbank_global_economic_prospects_2026_01.pdf | p.106 | chunk 543",
+        "worldbank_global_economic_prospects_2026_01.pdf | p.109 | chunk 556"
+      ]
+    },
+    {
+      "id": "co-06",
+      "category": "conceptual",
+      "seconds": 1.48,
+      "first_rank": 1,
+      "recall": 0.5,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "worldbank_global_economic_prospects_2026_06.pdf | p.110 | chunk 540",
+        "worldbank_global_economic_prospects_2026_06.pdf | p.110 | chunk 543",
+        "worldbank_global_economic_prospects_2026_01.pdf | p.115 | chunk 598",
+        "worldbank_global_economic_prospects_2026_06.pdf | p.140 | chunk 713",
+        "bis_annual_economic_report_2026.pdf | p.56 | chunk 192"
+      ]
+    },
+    {
+      "id": "co-07",
+      "category": "conceptual",
+      "seconds": 1.78,
+      "first_rank": 1,
+      "recall": 1.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "bis_annual_economic_report_2024.pdf | p.31 | chunk 110",
+        "bis_annual_economic_report_2026.pdf | p.21 | chunk 54",
+        "bis_annual_economic_report_2024.pdf | p.64 | chunk 260",
+        "bis_annual_economic_report_2024.pdf | p.65 | chunk 266",
+        "bis_annual_economic_report_2024.pdf | p.32 | chunk 115"
+      ]
+    },
+    {
+      "id": "co-08",
+      "category": "conceptual",
+      "seconds": 1.75,
+      "first_rank": 4,
+      "recall": 1.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "bis_annual_economic_report_2024.pdf | p.94 | chunk 404",
+        "bis_annual_economic_report_2024.pdf | p.67 | chunk 274",
+        "bis_annual_economic_report_2025.pdf | p.114 | chunk 432",
+        "bis_annual_economic_report_2024.pdf | p.66 | chunk 270",
+        "bis_annual_economic_report_2026.pdf | p.51 | chunk 173"
+      ]
+    },
+    {
+      "id": "co-09",
+      "category": "conceptual",
+      "seconds": 1.49,
+      "first_rank": null,
+      "recall": 0.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "fed_beige_book_20250716.pdf | p.1 | chunk 0",
+        "fed_beige_book_20250115.pdf | p.3 | chunk 2",
+        "fed_beige_book_20250305.pdf | p.3 | chunk 2",
+        "fed_beige_book_20250423.pdf | p.3 | chunk 2",
+        "fed_beige_book_20250604.pdf | p.3 | chunk 2"
+      ]
+    },
+    {
+      "id": "adv-01",
+      "category": "adversarial",
+      "seconds": 1.6,
+      "first_rank": null,
+      "recall": null,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "sec_10k_aapl_2024-11-01.txt | no pages | chunk 222",
+        "sec_10k_ko_2024-02-20.txt | no pages | chunk 711",
+        "sec_10k_nvda_2024-02-21.txt | no pages | chunk 245",
+        "sec_10k_ko_2024-02-20.txt | no pages | chunk 709",
+        "sec_10k_ko_2025-02-20.txt | no pages | chunk 698"
+      ]
+    },
+    {
+      "id": "adv-02",
+      "category": "adversarial",
+      "seconds": 1.62,
+      "first_rank": null,
+      "recall": null,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "sec_10k_msft_2026-07-29.txt | no pages | chunk 228",
+        "sec_10k_nvda_2025-02-26.txt | no pages | chunk 266",
+        "sec_10k_nvda_2026-02-25.txt | no pages | chunk 251",
+        "sec_10k_msft_2025-07-30.txt | no pages | chunk 223",
+        "sec_10k_msft_2024-07-30.txt | no pages | chunk 313"
+      ]
+    },
+    {
+      "id": "adv-03",
+      "category": "adversarial",
+      "seconds": 2.11,
+      "first_rank": null,
+      "recall": null,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "sec_10k_ko_2024-02-20.txt | no pages | chunk 439",
+        "sec_10k_ko_2026-02-20.txt | no pages | chunk 437",
+        "sec_10k_jpm_2024-02-16.txt | no pages | chunk 861",
+        "sec_10k_msft_2026-07-29.txt | no pages | chunk 207",
+        "sec_10k_jpm_2024-02-16.txt | no pages | chunk 1659"
+      ]
+    },
+    {
+      "id": "adv-04",
+      "category": "adversarial",
+      "seconds": 2.28,
+      "first_rank": null,
+      "recall": null,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "sec_10k_msft_2025-07-30.txt | no pages | chunk 207",
+        "sec_10k_msft_2024-07-30.txt | no pages | chunk 249",
+        "sec_10k_nvda_2025-02-26.txt | no pages | chunk 250",
+        "sec_10k_nvda_2026-02-25.txt | no pages | chunk 234",
+        "sec_10k_msft_2026-07-29.txt | no pages | chunk 225"
+      ]
+    },
+    {
+      "id": "adv-05",
+      "category": "adversarial",
+      "seconds": 2.05,
+      "first_rank": null,
+      "recall": null,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "sec_10k_nvda_2026-02-25.txt | no pages | chunk 98",
+        "bis_annual_economic_report_2025.pdf | p.67 | chunk 251",
+        "bis_annual_economic_report_2025.pdf | p.70 | chunk 267",
+        "sec_10k_jpm_2026-02-13.txt | no pages | chunk 451",
+        "sec_10k_ko_2026-02-20.txt | no pages | chunk 203"
+      ]
+    },
+    {
+      "id": "adv-06",
+      "category": "adversarial",
+      "seconds": 1.89,
+      "first_rank": null,
+      "recall": null,
+      "answer": "",
+      "judge_pass": null,
+      "route": "",
+      "retrieved": [
+        "sec_10k_jpm_2025-02-14.txt | no pages | chunk 1670",
+        "sec_10k_jpm_2024-02-16.txt | no pages | chunk 1714",
+        "sec_10k_jpm_2025-02-14.txt | no pages | chunk 819",
+        "sec_10k_jpm_2026-02-13.txt | no pages | chunk 1657",
+        "sec_10k_jpm_2025-02-14.txt | no pages | chunk 818"
+      ]
+    }
+  ],
+  "routed": [
+    {
+      "id": "ef-01",
+      "category": "exact_fact",
+      "seconds": 2.03,
+      "first_rank": 1,
+      "recall": 0.5,
+      "answer": "",
+      "judge_pass": null,
+      "route": "exact-fact",
+      "retrieved": [
+        "sec_10k_nvda_2024-02-21.txt | no pages | chunk 229",
+        "sec_10k_nvda_2024-02-21.txt | no pages | chunk 232",
+        "sec_10k_nvda_2024-02-21.txt | no pages | chunk 245",
+        "sec_10k_nvda_2024-02-21.txt | no pages | chunk 231",
+        "sec_10k_nvda_2024-02-21.txt | no pages | chunk 358"
+      ]
+    },
+    {
+      "id": "ef-02",
+      "category": "exact_fact",
+      "seconds": 1.08,
+      "first_rank": 1,
+      "recall": 1.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "exact-fact",
+      "retrieved": [
+        "sec_10k_nvda_2024-02-21.txt | no pages | chunk 229",
+        "sec_10k_nvda_2024-02-21.txt | no pages | chunk 231",
+        "sec_10k_nvda_2024-02-21.txt | no pages | chunk 245",
+        "sec_10k_nvda_2025-02-26.txt | no pages | chunk 250",
+        "sec_10k_nvda_2025-02-26.txt | no pages | chunk 236"
+      ]
+    },
+    {
+      "id": "ef-03",
+      "category": "exact_fact",
+      "seconds": 0.95,
+      "first_rank": 2,
+      "recall": 0.5,
+      "answer": "",
+      "judge_pass": null,
+      "route": "exact-fact",
+      "retrieved": [
+        "sec_10k_nvda_2026-02-25.txt | no pages | chunk 352",
+        "sec_10k_nvda_2026-02-25.txt | no pages | chunk 234",
+        "sec_10k_nvda_2026-02-25.txt | no pages | chunk 392",
+        "sec_10k_nvda_2026-02-25.txt | no pages | chunk 300",
+        "sec_10k_nvda_2026-02-25.txt | no pages | chunk 337"
+      ]
+    },
+    {
+      "id": "ef-04",
+      "category": "exact_fact",
+      "seconds": 1.09,
+      "first_rank": 3,
+      "recall": 1.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "exact-fact",
+      "retrieved": [
+        "sec_10k_aapl_2023-11-03.txt | no pages | chunk 142",
+        "sec_10k_aapl_2023-11-03.txt | no pages | chunk 145",
+        "sec_10k_aapl_2023-11-03.txt | no pages | chunk 135",
+        "sec_10k_aapl_2024-11-01.txt | no pages | chunk 135",
+        "sec_10k_aapl_2023-11-03.txt | no pages | chunk 140"
+      ]
+    },
+    {
+      "id": "ef-05",
+      "category": "exact_fact",
+      "seconds": 0.82,
+      "first_rank": null,
+      "recall": 0.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "exact-fact",
+      "retrieved": [
+        "sec_10k_msft_2025-07-30.txt | no pages | chunk 219",
+        "sec_10k_msft_2025-07-30.txt | no pages | chunk 206",
+        "sec_10k_msft_2024-07-30.txt | no pages | chunk 233",
+        "sec_10k_msft_2024-07-30.txt | no pages | chunk 248",
+        "sec_10k_msft_2024-07-30.txt | no pages | chunk 256"
+      ]
+    },
+    {
+      "id": "ef-06",
+      "category": "exact_fact",
+      "seconds": 0.89,
+      "first_rank": 5,
+      "recall": 1.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "exact-fact",
+      "retrieved": [
+        "sec_10k_msft_2026-07-29.txt | no pages | chunk 223",
+        "sec_10k_msft_2025-07-30.txt | no pages | chunk 219",
+        "sec_10k_msft_2026-07-29.txt | no pages | chunk 209",
+        "sec_10k_msft_2025-07-30.txt | no pages | chunk 206",
+        "sec_10k_msft_2025-07-30.txt | no pages | chunk 216"
+      ]
+    },
+    {
+      "id": "ef-07",
+      "category": "exact_fact",
+      "seconds": 0.86,
+      "first_rank": 3,
+      "recall": 1.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "exact-fact",
+      "retrieved": [
+        "sec_10k_msft_2026-07-29.txt | no pages | chunk 223",
+        "sec_10k_msft_2026-07-29.txt | no pages | chunk 209",
+        "sec_10k_msft_2026-07-29.txt | no pages | chunk 219",
+        "sec_10k_msft_2026-07-29.txt | no pages | chunk 387",
+        "sec_10k_msft_2026-07-29.txt | no pages | chunk 220"
+      ]
+    },
+    {
+      "id": "ef-08",
+      "category": "exact_fact",
+      "seconds": 0.94,
+      "first_rank": 1,
+      "recall": 1.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "exact-fact",
+      "retrieved": [
+        "sec_10k_jpm_2024-02-16.txt | no pages | chunk 641",
+        "sec_10k_jpm_2024-02-16.txt | no pages | chunk 1142",
+        "sec_10k_jpm_2024-02-16.txt | no pages | chunk 625",
+        "sec_10k_jpm_2024-02-16.txt | no pages | chunk 638",
+        "sec_10k_jpm_2024-02-16.txt | no pages | chunk 1675"
+      ]
+    },
+    {
+      "id": "ef-09",
+      "category": "exact_fact",
+      "seconds": 0.84,
+      "first_rank": 2,
+      "recall": 1.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "exact-fact",
+      "retrieved": [
+        "sec_10k_jpm_2024-02-16.txt | no pages | chunk 641",
+        "sec_10k_jpm_2025-02-14.txt | no pages | chunk 640",
+        "sec_10k_jpm_2025-02-14.txt | no pages | chunk 636",
+        "sec_10k_jpm_2025-02-14.txt | no pages | chunk 628",
+        "sec_10k_jpm_2025-02-14.txt | no pages | chunk 572"
+      ]
+    },
+    {
+      "id": "ef-10",
+      "category": "exact_fact",
+      "seconds": 1.11,
+      "first_rank": null,
+      "recall": 0.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "exact-fact",
+      "retrieved": [
+        "sec_10k_jpm_2026-02-13.txt | no pages | chunk 694",
+        "sec_10k_jpm_2025-02-14.txt | no pages | chunk 572",
+        "sec_10k_jpm_2026-02-13.txt | no pages | chunk 618",
+        "sec_10k_jpm_2025-02-14.txt | no pages | chunk 465",
+        "sec_10k_jpm_2025-02-14.txt | no pages | chunk 651"
+      ]
+    },
+    {
+      "id": "ef-11",
+      "category": "exact_fact",
+      "seconds": 2.23,
+      "first_rank": null,
+      "recall": 0.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "exact-fact",
+      "retrieved": [
+        "sec_10k_jpm_2024-02-16.txt | no pages | chunk 826",
+        "sec_10k_jpm_2025-02-14.txt | no pages | chunk 821",
+        "sec_10k_jpm_2024-02-16.txt | no pages | chunk 1709",
+        "sec_10k_jpm_2024-02-16.txt | no pages | chunk 837",
+        "sec_10k_jpm_2025-02-14.txt | no pages | chunk 1671"
+      ]
+    },
+    {
+      "id": "ef-12",
+      "category": "exact_fact",
+      "seconds": 1.15,
+      "first_rank": null,
+      "recall": 0.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "exact-fact",
+      "retrieved": [
+        "sec_10k_ko_2025-02-20.txt | no pages | chunk 452",
+        "sec_10k_ko_2025-02-20.txt | no pages | chunk 693",
+        "sec_10k_ko_2024-02-20.txt | no pages | chunk 460",
+        "sec_10k_ko_2024-02-20.txt | no pages | chunk 390",
+        "sec_10k_ko_2024-02-20.txt | no pages | chunk 396"
+      ]
+    },
+    {
+      "id": "ef-13",
+      "category": "exact_fact",
+      "seconds": 1.2,
+      "first_rank": 1,
+      "recall": 1.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "exact-fact",
+      "retrieved": [
+        "sec_10k_ko_2026-02-20.txt | no pages | chunk 382",
+        "sec_10k_ko_2026-02-20.txt | no pages | chunk 703",
+        "sec_10k_ko_2026-02-20.txt | no pages | chunk 390",
+        "sec_10k_ko_2026-02-20.txt | no pages | chunk 457",
+        "sec_10k_ko_2024-02-20.txt | no pages | chunk 395"
+      ]
+    },
+    {
+      "id": "co-01",
+      "category": "conceptual",
+      "seconds": 13.9,
+      "first_rank": null,
+      "recall": 0.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "conceptual",
+      "retrieved": [
+        "fed_beige_book_20251126.pdf | p.3 | chunk 3",
+        "fed_beige_book_20260114.pdf | p.3 | chunk 3",
+        "fed_beige_book_20250604.pdf | p.3 | chunk 2",
+        "fed_beige_book_20250716.pdf | p.3 | chunk 2",
+        "fed_beige_book_20251015.pdf | p.3 | chunk 2"
+      ]
+    },
+    {
+      "id": "co-02",
+      "category": "conceptual",
+      "seconds": 2.96,
+      "first_rank": null,
+      "recall": 0.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "conceptual",
+      "retrieved": [
+        "fed_beige_book_20250423.pdf | p.1 | chunk 0",
+        "fed_beige_book_20250604.pdf | p.1 | chunk 0",
+        "fed_beige_book_20250716.pdf | p.1 | chunk 0",
+        "fed_beige_book_20250305.pdf | p.1 | chunk 0",
+        "fed_beige_book_20250115.pdf | p.1 | chunk 0"
+      ]
+    },
+    {
+      "id": "co-03",
+      "category": "conceptual",
+      "seconds": 3.99,
+      "first_rank": null,
+      "recall": 0.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "conceptual",
+      "retrieved": [
+        "fed_beige_book_20251126.pdf | p.1 | chunk 0",
+        "fed_beige_book_20250423.pdf | p.1 | chunk 0",
+        "fed_beige_book_20250716.pdf | p.1 | chunk 0",
+        "fed_beige_book_20250903.pdf | p.1 | chunk 0",
+        "fed_beige_book_20251015.pdf | p.1 | chunk 0"
+      ]
+    },
+    {
+      "id": "co-04",
+      "category": "conceptual",
+      "seconds": 4.11,
+      "first_rank": 2,
+      "recall": 0.5,
+      "answer": "",
+      "judge_pass": null,
+      "route": "conceptual",
+      "retrieved": [
+        "worldbank_global_economic_prospects_2026_06.pdf | p.95 | chunk 473",
+        "worldbank_global_economic_prospects_2026_01.pdf | p.27 | chunk 61",
+        "worldbank_global_economic_prospects_2026_01.pdf | p.106 | chunk 543",
+        "worldbank_global_economic_prospects_2026_01.pdf | p.58 | chunk 260",
+        "worldbank_global_economic_prospects_2026_01.pdf | p.1 | chunk 0"
+      ]
+    },
+    {
+      "id": "co-05",
+      "category": "conceptual",
+      "seconds": 3.63,
+      "first_rank": null,
+      "recall": 0.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "conceptual",
+      "retrieved": [
+        "worldbank_global_economic_prospects_2026_01.pdf | p.79 | chunk 380",
+        "worldbank_global_economic_prospects_2026_06.pdf | p.95 | chunk 473",
+        "worldbank_global_economic_prospects_2026_06.pdf | p.96 | chunk 478",
+        "worldbank_global_economic_prospects_2026_01.pdf | p.106 | chunk 543",
+        "worldbank_global_economic_prospects_2026_01.pdf | p.109 | chunk 556"
+      ]
+    },
+    {
+      "id": "co-06",
+      "category": "conceptual",
+      "seconds": 1.6,
+      "first_rank": 1,
+      "recall": 0.5,
+      "answer": "",
+      "judge_pass": null,
+      "route": "conceptual",
+      "retrieved": [
+        "worldbank_global_economic_prospects_2026_06.pdf | p.110 | chunk 540",
+        "worldbank_global_economic_prospects_2026_06.pdf | p.110 | chunk 543",
+        "worldbank_global_economic_prospects_2026_01.pdf | p.115 | chunk 598",
+        "worldbank_global_economic_prospects_2026_06.pdf | p.140 | chunk 713",
+        "bis_annual_economic_report_2026.pdf | p.56 | chunk 192"
+      ]
+    },
+    {
+      "id": "co-07",
+      "category": "conceptual",
+      "seconds": 2.17,
+      "first_rank": 1,
+      "recall": 1.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "conceptual",
+      "retrieved": [
+        "bis_annual_economic_report_2024.pdf | p.31 | chunk 110",
+        "bis_annual_economic_report_2026.pdf | p.21 | chunk 54",
+        "bis_annual_economic_report_2024.pdf | p.64 | chunk 260",
+        "bis_annual_economic_report_2024.pdf | p.65 | chunk 266",
+        "bis_annual_economic_report_2024.pdf | p.32 | chunk 115"
+      ]
+    },
+    {
+      "id": "co-08",
+      "category": "conceptual",
+      "seconds": 1.81,
+      "first_rank": 4,
+      "recall": 1.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "conceptual",
+      "retrieved": [
+        "bis_annual_economic_report_2024.pdf | p.94 | chunk 404",
+        "bis_annual_economic_report_2024.pdf | p.67 | chunk 274",
+        "bis_annual_economic_report_2025.pdf | p.114 | chunk 432",
+        "bis_annual_economic_report_2024.pdf | p.66 | chunk 270",
+        "bis_annual_economic_report_2026.pdf | p.51 | chunk 173"
+      ]
+    },
+    {
+      "id": "co-09",
+      "category": "conceptual",
+      "seconds": 1.34,
+      "first_rank": null,
+      "recall": 0.0,
+      "answer": "",
+      "judge_pass": null,
+      "route": "conceptual",
+      "retrieved": [
+        "fed_beige_book_20250716.pdf | p.1 | chunk 0",
+        "fed_beige_book_20250115.pdf | p.3 | chunk 2",
+        "fed_beige_book_20250305.pdf | p.3 | chunk 2",
+        "fed_beige_book_20250423.pdf | p.3 | chunk 2",
+        "fed_beige_book_20250604.pdf | p.3 | chunk 2"
+      ]
+    },
+    {
+      "id": "adv-01",
+      "category": "adversarial",
+      "seconds": 1.64,
+      "first_rank": null,
+      "recall": null,
+      "answer": "",
+      "judge_pass": null,
+      "route": "ambiguous",
+      "retrieved": [
+        "sec_10k_aapl_2024-11-01.txt | no pages | chunk 222",
+        "sec_10k_ko_2024-02-20.txt | no pages | chunk 711",
+        "sec_10k_nvda_2024-02-21.txt | no pages | chunk 245",
+        "sec_10k_ko_2024-02-20.txt | no pages | chunk 709",
+        "sec_10k_ko_2025-02-20.txt | no pages | chunk 698"
+      ]
+    },
+    {
+      "id": "adv-02",
+      "category": "adversarial",
+      "seconds": 0.27,
+      "first_rank": null,
+      "recall": null,
+      "answer": "",
+      "judge_pass": null,
+      "route": "exact-fact",
+      "retrieved": [
+        "sec_10k_msft_2026-07-29.txt | no pages | chunk 228",
+        "sec_10k_msft_2025-07-30.txt | no pages | chunk 223",
+        "sec_10k_msft_2024-07-30.txt | no pages | chunk 252",
+        "sec_10k_msft_2024-07-30.txt | no pages | chunk 313",
+        "sec_10k_msft_2025-07-30.txt | no pages | chunk 281"
+      ]
+    },
+    {
+      "id": "adv-03",
+      "category": "adversarial",
+      "seconds": 1.61,
+      "first_rank": null,
+      "recall": null,
+      "answer": "",
+      "judge_pass": null,
+      "route": "ambiguous",
+      "retrieved": [
+        "sec_10k_ko_2024-02-20.txt | no pages | chunk 439",
+        "sec_10k_ko_2026-02-20.txt | no pages | chunk 437",
+        "sec_10k_jpm_2024-02-16.txt | no pages | chunk 861",
+        "sec_10k_msft_2026-07-29.txt | no pages | chunk 207",
+        "sec_10k_jpm_2024-02-16.txt | no pages | chunk 1659"
+      ]
+    },
+    {
+      "id": "adv-04",
+      "category": "adversarial",
+      "seconds": 1.32,
+      "first_rank": null,
+      "recall": null,
+      "answer": "",
+      "judge_pass": null,
+      "route": "ambiguous",
+      "retrieved": [
+        "sec_10k_msft_2025-07-30.txt | no pages | chunk 207",
+        "sec_10k_msft_2024-07-30.txt | no pages | chunk 249",
+        "sec_10k_nvda_2025-02-26.txt | no pages | chunk 250",
+        "sec_10k_nvda_2026-02-25.txt | no pages | chunk 234",
+        "sec_10k_msft_2026-07-29.txt | no pages | chunk 225"
+      ]
+    },
+    {
+      "id": "adv-05",
+      "category": "adversarial",
+      "seconds": 1.62,
+      "first_rank": null,
+      "recall": null,
+      "answer": "",
+      "judge_pass": null,
+      "route": "conceptual",
+      "retrieved": [
+        "sec_10k_nvda_2026-02-25.txt | no pages | chunk 98",
+        "bis_annual_economic_report_2025.pdf | p.67 | chunk 251",
+        "bis_annual_economic_report_2025.pdf | p.70 | chunk 267",
+        "sec_10k_jpm_2026-02-13.txt | no pages | chunk 451",
+        "sec_10k_ko_2026-02-20.txt | no pages | chunk 203"
+      ]
+    },
+    {
+      "id": "adv-06",
+      "category": "adversarial",
+      "seconds": 0.19,
+      "first_rank": null,
+      "recall": null,
+      "answer": "",
+      "judge_pass": null,
+      "route": "exact-fact",
+      "retrieved": [
+        "sec_10k_jpm_2025-02-14.txt | no pages | chunk 818",
+        "sec_10k_jpm_2024-02-16.txt | no pages | chunk 1714",
+        "sec_10k_jpm_2025-02-14.txt | no pages | chunk 819",
+        "sec_10k_jpm_2026-02-13.txt | no pages | chunk 1657",
+        "sec_10k_jpm_2024-02-16.txt | no pages | chunk 844"
+      ]
+    }
+  ]
+}
