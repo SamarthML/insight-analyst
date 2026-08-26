@@ -31,3 +31,4 @@ data/tabular/*
 !data/documents/sample_*.pdf
 
 .ipynb_checkpoints/
+data/eval/results/token_usage.json
