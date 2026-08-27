@@ -1831,16 +1831,20 @@
     "hybrid+filter": {
       "faithfulness": 0.9166666666666666,
       "answer_relevancy": 0.7187219364859563
+    },
+    "routed": {
+      "faithfulness": 0.9416666666666667,
+      "answer_relevancy": 0.7443638485613465
     }
   },
   "routed": [
     {
       "id": "ef-01",
       "category": "exact_fact",
-      "seconds": 39.57,
+      "seconds": 167.93,
       "first_rank": 1,
       "recall": 0.5,
-      "answer": "NVIDIA reported total revenue of **$60.9\u202fbillion** for fiscal year\u202f2024, which represented a **126\u202f% increase** from the prior year\u30101\u3011.",
+      "answer": "NVIDIA reported total revenue of **$60.9\u202fbillion** for fiscal year\u202f2024, which represented a **126\u202f% increase** over the prior year\u30101\u3011.",
       "judge_pass": null,
       "route": "exact-fact",
       "retrieved": [
@@ -1854,10 +1858,10 @@
     {
       "id": "ef-02",
       "category": "exact_fact",
-      "seconds": 13.39,
+      "seconds": 12.93,
       "first_rank": 1,
       "recall": 1.0,
-      "answer": "NVIDIA\u2019s Data Center revenue grew **217%** in fiscal year\u202f2024\u30101\u3011\u30102\u3011.",
+      "answer": "NVIDIA\u2019s Data Center revenue grew **217%** in fiscal year\u202f2024\u30101\u3011.",
       "judge_pass": null,
       "route": "exact-fact",
       "retrieved": [
@@ -1871,7 +1875,7 @@
     {
       "id": "ef-03",
       "category": "exact_fact",
-      "seconds": 13.18,
+      "seconds": 13.36,
       "first_rank": 2,
       "recall": 0.5,
       "answer": "NVIDIA reported revenue of **$215.9\u202fbillion** for fiscal year\u202f2026\u30102\u3011.",
@@ -1888,7 +1892,7 @@
     {
       "id": "ef-04",
       "category": "exact_fact",
-      "seconds": 13.98,
+      "seconds": 13.57,
       "first_rank": 3,
       "recall": 1.0,
       "answer": "Apple\u2019s total net sales fell in fiscal\u202f2023, decreasing by\u202f3% or about\u202f$11.0\u202fbillion compared with 2022\u30103\u3011.",
@@ -1905,10 +1909,10 @@
     {
       "id": "ef-05",
       "category": "exact_fact",
-      "seconds": 13.85,
+      "seconds": 14.18,
       "first_rank": null,
       "recall": 0.0,
-      "answer": "Microsoft\u2019s revenue grew by about\u202f$20.9\u202fbillion in fiscal year\u202f2024, rising from $88.5\u202fbillion to $109.4\u202fbillion \u2013 a 24% increase\u30104\u3011.",
+      "answer": "Microsoft\u2019s revenue grew from $88.5\u202fbillion in FY\u202f2023 to $109.4\u202fbillion in FY\u202f2024 \u2013 an increase of about $20.9\u202fbillion (\u224824%)\u30104\u3011.",
       "judge_pass": null,
       "route": "exact-fact",
       "retrieved": [
@@ -1922,7 +1926,7 @@
     {
       "id": "ef-06",
       "category": "exact_fact",
-      "seconds": 13.3,
+      "seconds": 13.09,
       "first_rank": 5,
       "recall": 1.0,
       "answer": "Microsoft\u2019s revenue increased by **$36.6\u202fbillion** in fiscal year\u202f2025\u30105\u3011.",
@@ -1939,7 +1943,7 @@
     {
       "id": "ef-07",
       "category": "exact_fact",
-      "seconds": 13.82,
+      "seconds": 13.16,
       "first_rank": 3,
       "recall": 1.0,
       "answer": "Microsoft\u2019s revenue increased by $50.1\u202fbillion in fiscal year\u202f2026\u30103\u3011.",
@@ -1956,10 +1960,10 @@
     {
       "id": "ef-08",
       "category": "exact_fact",
-      "seconds": 16.4,
+      "seconds": 14.39,
       "first_rank": 1,
       "recall": 1.0,
-      "answer": "JPMorgan\u202fChase reported net income of **$49.552\u202fbillion** for 2023, and earnings per share of **$16.23** (diluted) for the same year\u30102\u3011.",
+      "answer": "JPMorgan\u202fChase reported net income of **$49.552\u202fbillion** for 2023, and earnings per share of **$16.23** (diluted)\u30102\u3011.",
       "judge_pass": null,
       "route": "exact-fact",
       "retrieved": [
@@ -1973,10 +1977,10 @@
     {
       "id": "ef-09",
       "category": "exact_fact",
-      "seconds": 10.31,
+      "seconds": 13.16,
       "first_rank": 2,
       "recall": 1.0,
-      "answer": "JPMorgan\u202fChase reported net income of **$58.5\u202fbillion** for 2024 and a ROTCE of **22\u202f%**\u30102\u3011.",
+      "answer": "JPMorgan\u202fChase reported net income of **$58.5\u202fbillion** for 2024 and a **ROTCE of 22%**\u30102\u3011.",
       "judge_pass": null,
       "route": "exact-fact",
       "retrieved": [
@@ -1990,10 +1994,10 @@
     {
       "id": "ef-10",
       "category": "exact_fact",
-      "seconds": 13.71,
+      "seconds": 13.76,
       "first_rank": null,
       "recall": 0.0,
-      "answer": "JPMorgan\u202fChase\u2019s net income rose in 2025, increasing by about\u202f4% compared with 2024\u30101\u3011.",
+      "answer": "JPMorgan\u202fChase\u2019s net income rose in 2025 \u2013 it was $18.2\u202fbillion, up about\u202f4\u202f% versus 2024\u30101\u3011.",
       "judge_pass": null,
       "route": "exact-fact",
       "retrieved": [
@@ -2007,7 +2011,7 @@
     {
       "id": "ef-11",
       "category": "exact_fact",
-      "seconds": 13.48,
+      "seconds": 13.84,
       "first_rank": null,
       "recall": 0.0,
       "answer": "NOT_IN_CONTEXT",
@@ -2024,10 +2028,10 @@
     {
       "id": "ef-12",
       "category": "exact_fact",
-      "seconds": 13.68,
+      "seconds": 15.53,
       "first_rank": null,
       "recall": 0.0,
-      "answer": "Coca\u2011Cola\u2019s net operating revenues for 2024 were **$47,061\u202fmillion**\u30101\u3011\u30102\u3011.",
+      "answer": "Coca\u2011Cola\u2019s net operating revenues for 2024 were **$47,061\u202fmillion**\u30101\u3011.",
       "judge_pass": null,
       "route": "exact-fact",
       "retrieved": [
@@ -2041,7 +2045,7 @@
     {
       "id": "ef-13",
       "category": "exact_fact",
-      "seconds": 13.68,
+      "seconds": 11.38,
       "first_rank": 1,
       "recall": 1.0,
       "answer": "Coca\u2011Cola reported net operating revenues of **$47,941\u202fmillion in 2025**, compared with **$47,061\u202fmillion in 2024** \u2013 an increase of about **$880\u202fmillion, or roughly 2\u202f%** year\u2011over\u2011year\u30101\u3011\u30102\u3011.",
@@ -2058,7 +2062,7 @@
     {
       "id": "co-01",
       "category": "conceptual",
-      "seconds": 13.32,
+      "seconds": 14.24,
       "first_rank": null,
       "recall": 0.0,
       "answer": "NOT_IN_CONTEXT",
@@ -2075,7 +2079,7 @@
     {
       "id": "co-02",
       "category": "conceptual",
-      "seconds": 13.55,
+      "seconds": 13.66,
       "first_rank": null,
       "recall": 0.0,
       "answer": "NOT_IN_CONTEXT",
@@ -2092,7 +2096,7 @@
     {
       "id": "co-03",
       "category": "conceptual",
-      "seconds": 13.71,
+      "seconds": 13.74,
       "first_rank": null,
       "recall": 0.0,
       "answer": "NOT_IN_CONTEXT",
@@ -2109,7 +2113,7 @@
     {
       "id": "co-04",
       "category": "conceptual",
-      "seconds": 13.68,
+      "seconds": 13.53,
       "first_rank": 2,
       "recall": 0.5,
       "answer": "The World Bank estimated that global growth would average **2.7\u202fpercent in 2025**\u30102\u3011.",
@@ -2126,7 +2130,7 @@
     {
       "id": "co-05",
       "category": "conceptual",
-      "seconds": 14.1,
+      "seconds": 13.64,
       "first_rank": null,
       "recall": 0.0,
       "answer": "NOT_IN_CONTEXT",
@@ -2143,10 +2147,10 @@
     {
       "id": "co-06",
       "category": "conceptual",
-      "seconds": 13.56,
+      "seconds": 13.97,
       "first_rank": 1,
       "recall": 0.5,
-      "answer": "Debt distress risk has risen \u2013 fragile and conflict\u2011affected economies are now seen as especially vulnerable to debt distress as debt levels increase and tighter global financing conditions push borrowing costs higher\u30101\u3011\u30102\u3011.",
+      "answer": "Debt distress risk for fragile and conflict\u2011affected economies has risen, making them especially vulnerable as government debt expands and global financing conditions tighten\u30101\u2020L1-L4\u3011\u30102\u2020L1-L5\u3011",
       "judge_pass": null,
       "route": "conceptual",
       "retrieved": [
@@ -2160,10 +2164,10 @@
     {
       "id": "co-07",
       "category": "conceptual",
-      "seconds": 13.49,
+      "seconds": 14.47,
       "first_rank": 1,
       "recall": 1.0,
-      "answer": "Major central banks held off because they were unsure whether the price\u2011rise was temporary. After a long stretch of very low inflation, policymakers were uncertain about the persistence of the early\u20112021 inflation surge and chose to keep the highly accommodative stance that had been supporting the economy before tightening.\u202f[1]",
+      "answer": "Major central banks held off because they were unsure whether the price\u2011rise was temporary. After a long stretch of very low inflation, policymakers were uncertain about the persistence of the early\u20112021 inflation surge and chose to keep the highly accommodative stance that had been supporting the economy before tightening. \u30101\u3011",
       "judge_pass": null,
       "route": "conceptual",
       "retrieved": [
@@ -2177,10 +2181,10 @@
     {
       "id": "co-08",
       "category": "conceptual",
-      "seconds": 13.96,
+      "seconds": 12.59,
       "first_rank": 4,
       "recall": 1.0,
-      "answer": "The BIS notes that a credible central bank \u2013 one that convincingly commits to bringing inflation under control \u2013 sends a strong signal to markets, firms and workers that it will do whatever is needed to restore price stability. This credibility helps prevent an \u201cinflation psychology\u201d from taking hold and keeps inflation expectations anchored, reducing the risk that inflation expectations become de\u2011anchored and a high\u2011inflation regime emerges. Conversely, when monetary\u2011policy credibility is weak, inflationary channels are more likely to operate\u30104\u3011.",
+      "answer": "Central\u2011bank credibility \u2013 i.e., the belief that the bank will do whatever is needed to bring inflation back under control \u2013 sends a strong signal to markets, firms and households that price stability will be restored.  This signal helps keep inflation expectations anchored and prevents an \u201cinflation psychology\u201d from taking hold, thereby averting a shift to a high\u2011inflation regime.  When credibility is weak, those inflationary channels are more likely to operate.\u202f[4][5]",
       "judge_pass": null,
       "route": "conceptual",
       "retrieved": [
@@ -2194,7 +2198,7 @@
     {
       "id": "co-09",
       "category": "conceptual",
-      "seconds": 13.06,
+      "seconds": 13.46,
       "first_rank": null,
       "recall": 0.0,
       "answer": "NOT_IN_CONTEXT",
@@ -2211,7 +2215,7 @@
     {
       "id": "adv-01",
       "category": "adversarial",
-      "seconds": 27.11,
+      "seconds": 27.06,
       "first_rank": null,
       "recall": null,
       "answer": "NOT_IN_CONTEXT",
@@ -2228,7 +2232,7 @@
     {
       "id": "adv-02",
       "category": "adversarial",
-      "seconds": 27.16,
+      "seconds": 27.3,
       "first_rank": null,
       "recall": null,
       "answer": "NOT_IN_CONTEXT",
@@ -2245,7 +2249,7 @@
     {
       "id": "adv-03",
       "category": "adversarial",
-      "seconds": 37.22,
+      "seconds": 27.24,
       "first_rank": null,
       "recall": null,
       "answer": "NOT_IN_CONTEXT",
@@ -2262,7 +2266,7 @@
     {
       "id": "adv-04",
       "category": "adversarial",
-      "seconds": 17.87,
+      "seconds": 27.1,
       "first_rank": null,
       "recall": null,
       "answer": "NEEDS_CLARIFICATION: Please specify which company's revenue growth and for which fiscal year you would like to know.",
@@ -2279,11 +2283,11 @@
     {
       "id": "adv-05",
       "category": "adversarial",
-      "seconds": 26.83,
+      "seconds": 26.89,
       "first_rank": null,
       "recall": null,
-      "answer": "The main risk factors highlighted are:\n\n- Failure to meet the evolving needs of the industry and markets, which could hurt financial results.  \n- Competition that could erode market share and financial performance.  \n- Long manufacturing lead times and uncertain supply\u2011capacity availability, leading to possible mismatches between supply and demand.  \n- Dependence on third\u2011party suppliers for manufacturing, assembly, testing, or packaging, which reduces control over product quantity, quality, yields, and delivery schedules.  \n- Legal and regulatory risks that could materially affect the business.  \n- Consumer\u2011demand risks, such as obesity and other health\u2011related concerns that may reduce demand for certain products.  \n\n[1]\u202f[4]\u202f[5]",
-      "judge_pass": false,
+      "answer": "NEEDS_CLARIFICATION: Which company's or report's main risk factors are you asking about?",
+      "judge_pass": true,
       "route": "conceptual",
       "retrieved": [
         "sec_10k_nvda_2026-02-25.txt | no pages | chunk 98",
@@ -2296,7 +2300,7 @@
     {
       "id": "adv-06",
       "category": "adversarial",
-      "seconds": 26.81,
+      "seconds": 27.03,
       "first_rank": null,
       "recall": null,
       "answer": "NEEDS_CLARIFICATION: Which year or reporting period\u2019s CET1 capital ratio are you asking about?",

@@ -1,20 +1,22 @@
 # Retrieval evaluation — results and analysis
 
-Runs 2026-08-23, 2026-08-25 and 2026-08-26. Corpus 16,917 chunks | embeddings
+Runs 2026-08-23, 2026-08-25, 2026-08-26 and 2026-08-27. Corpus 16,917 chunks | embeddings
 `BAAI/bge-small-en-v1.5` (local) | judge `groq:openai/gpt-oss-120b` | k=5 |
 28 questions × 5 configs.
 
 > This file is the curated write-up. The harness regenerates raw tables into
 > `eval_tables.md` on every run; it does not overwrite this document.
 >
-> **STATUS (2026-08-26): complete, with one gap.** Retrieval metrics are final
-> for all five configurations, `routed` included. LLM-judged metrics exist for
-> all five, but `routed`'s faithfulness (0.969) and answer relevancy (0.699)
-> are prior-run values from 2026-08-25 that **cannot be reproduced from the
-> current repository state** -- see "The lost routed scores" below. A
-> 2026-08-26 replicate of `hybrid+filter` establishes a noise floor for every
-> judged number in this report -- see "Run-to-run variance", and read the
-> generation-quality comparisons against it.
+> **STATUS (2026-08-27): complete.** Retrieval and LLM-judged metrics are final
+> and first-hand for all five configurations. `routed`'s judged scores were
+> re-measured on 2026-08-27 (faithfulness 0.942, answer relevancy 0.744, Track B
+> 6/6) after an earlier set was lost to the harness bug described in "The
+> re-measured routed scores" below; nothing in this report is now quoted from an
+> unreproducible run.
+>
+> A 2026-08-26 replicate of `hybrid+filter` establishes a noise floor for every
+> judged number here -- see "Run-to-run variance", and read every
+> generation-quality comparison against it.
 >
 > The original 2026-08-23 status -- the two filter-on configurations pending on
 > Groq's 200,000 tokens/day cap -- was resolved by the 2026-08-25 run.
@@ -271,48 +273,81 @@ chunks the filter had already surfaced. Selecting between the strategies avoids
 the interference that combining them creates.
 
 Overall hit rate 0.545 -> 0.591 and MRR 0.356 -> 0.392. Both are deterministic
-set comparisons against ground-truth chunk labels -- no judge, no sampling, and
-verifiably identical across runs -- so the noise floor above does not apply.
-**This is the only decisive result in the routing comparison, and the whole case
-for routing rests on it.**
+set comparisons against ground-truth chunk labels -- no judge, no sampling -- so
+the noise floor above does not apply.
 
-### Generation quality: a wash
+**Confirmed by re-measurement.** The 2026-08-27 run reproduced routing's
+retrieval numbers exactly: exact-fact 9/13 (0.692), conceptual 4/9 (0.444),
+overall 13/22 (0.591), with all 22 Track A questions routing to their labelled
+type both times and no misclassifications. Identical to 2026-08-25, as it must
+be -- no LLM participates. **This is the only part of the routing comparison that
+reproduces exactly, and the whole case for routing rests on it.**
 
-Compared against the *same-day* 2026-08-25 `hybrid+filter` measurement:
+### Generation quality: a small edge to routing
 
-| metric | routed | hybrid+filter | delta | noise floor | verdict |
+`routed` was re-measured on 2026-08-27. Compared against `hybrid+filter`'s
+closest measurement in time, the 2026-08-26 replicate:
+
+| metric | routed (08-27) | hybrid+filter (08-26) | delta | noise floor | verdict |
 |---|---:|---:|---:|---:|---|
-| faithfulness | 0.969 | 0.948 | +0.021 | 0.031 | within noise |
-| answer relevancy | 0.699 | 0.740 | -0.041 | 0.021 | exceeds floor, against routing |
+| faithfulness | 0.942 | 0.917 | +0.025 | 0.031 | within noise, inconclusive |
+| answer relevancy | 0.744 | 0.719 | +0.025 | 0.021 | just clears the floor |
 
-Routing shows no measurable faithfulness benefit: +0.021 against a 0.031 floor
-is not an effect. The relevancy difference does clear its floor, which means the
-evidence leans mildly *against* routing on that metric -- but two caveats keep
-it from being decisive. Both routed figures are unreproducible (see below), and
-`answer_relevancy` runs at `strictness=1`, noisier per sample than the default
-and possibly not fully captured by a floor derived from the same setting.
+Both deltas favour routing. Relevancy's +0.025 slightly exceeds its 0.021 floor
+and is the only judged comparison in this report that clears its own noise
+threshold -- barely. Faithfulness's identical +0.025 sits inside the wider 0.031
+faithfulness floor and stays inconclusive.
 
-The defensible summary is that **routing does not improve generation quality and
-may cost a little answer relevancy**, and that its case rests on retrieval.
+**This is the best available pair, not a clean one.** The two measurements are a
+day apart, so the day effect is still folded into the configuration effect -- the
+exact contamination the variance section exists to warn about. A genuinely
+matched comparison needs both configurations scored in one sitting, which the
+200,000 tokens/day cap makes awkward but not impossible at two configurations per
+day. Until then, treat the direction as supported and the magnitude as soft.
 
-A comparison to avoid: routing's 0.969 against the *2026-08-26* `hybrid+filter`
-faithfulness of 0.917 gives a much more flattering +0.052. That crosses runs, so
-most of the gap is the 0.031 day-to-day drift rather than the configuration.
-Mixing the day effect into the config effect is precisely the error the variance
-measurement exists to prevent.
+**This reverses the conclusion this section previously carried.** It read
+"routing does not improve generation quality and may cost a little answer
+relevancy." That rested on 0.969 / 0.699 -- figures lost to the `_ragas`
+overwrite bug and quoted from an earlier run that could no longer be reproduced.
+The re-measurement returned 0.942 / 0.744: faithfulness 0.027 lower, relevancy
+0.045 higher, flipping relevancy from -0.041 to +0.025.
 
-### Track B: tied at 5/6, both failing adv-05
+The distinction matters. **The reversal came from repairing a lost-data problem,
+not from a new run landing differently by chance.** The superseded numbers were
+never verified; they were carried in this report explicitly flagged as
+unreproducible, which is what made the correction straightforward rather than a
+silent contradiction between two equally-trusted figures. Had they been asserted
+as measurements, the re-run would have looked like irreproducibility in the
+metric rather than a bug in the harness.
 
-Both configurations pass 5 of 6 and fail the same question. The tempting reading
--- that routing changed something about `adv-05` -- is wrong in both directions.
-It fixed nothing, and it broke nothing.
+### Track B: adv-05 is noise, and it drives the whole difference
 
-The 2026-08-26 replicate settles it: the *identical* `hybrid+filter`
-configuration passed `adv-05` on 2026-08-25 and failed it on 2026-08-26, with no
-change to code, prompts, questions or settings. `adv-05` ("What are the main
-risk factors?", ambiguous as to company) sits on the judge's decision boundary
-and flips between a confident answer and `NEEDS_CLARIFICATION` independently of
-what retrieval feeds it.
+`routed` scored 6/6 on 2026-08-27, against 5/6 on 2026-08-25. The entire
+movement is `adv-05` flipping, and it is not a routing effect in either
+direction.
+
+**`adv-05` has now flipped across three separate measurements, with no
+relationship to retrieval configuration:**
+
+| date | config | adv-05 |
+|---|---|---|
+| 2026-08-25 | hybrid+filter | PASS |
+| 2026-08-26 | hybrid+filter | FAIL |
+| 2026-08-25 | routed | FAIL |
+| 2026-08-27 | routed | PASS |
+
+Both configurations have passed it and failed it, with no change to code,
+prompts, questions or settings between the paired runs. `adv-05` ("What are the
+main risk factors?", ambiguous as to company) sits on the judge's decision
+boundary and flips between a confident answer and `NEEDS_CLARIFICATION`
+independently of what retrieval feeds it. The instability is a property of that
+question under this judge, not of anything tested.
+
+**Track B's aggregate should therefore be read as noisy for either
+configuration.** At n=6 one flipping question moves the score by 0.167 -- eight
+times the answer-relevancy noise floor -- so a 6/6 against a 5/6 is not evidence
+of a difference. Track B measures that the refusal path works, which it does in
+every run; it does not have the resolution to rank configurations.
 
 This also revises an earlier finding. The 2026-08-23 report attributed the sole
 `adv-05` failure to `hybrid+filter+rerank` and read it as a third instance of
@@ -345,11 +380,13 @@ per-query one.
 
 ### Verdict
 
-Routing is the better default, on retrieval and ranking quality alone.
-Generation quality is a wash within measured noise, Track B is tied on a
-question that flips on its own, and latency is marginally worse. The retrieval
-gain is real, deterministic and reproducible; that is enough to justify routing
-as the default, and it is the only part of this comparison that is.
+Routing is the better default, and the case rests on retrieval. Hit rate 0.591
+vs 0.545 and MRR 0.392 vs 0.356 are deterministic, judge-free, and reproduced
+exactly across two runs two days apart. Generation quality leans slightly toward
+routing (+0.025 on both metrics) but only relevancy clears its noise floor, and
+only just. Track B is noise at n=6. Latency is marginally worse. The retrieval
+gain is the part that would survive another run, and it is the part the verdict
+is built on.
 
 **Routing resolves none of the open limitations.** Within-document ranking
 failures (co-01/co-02 front matter, ef-05 sibling competition), the
@@ -359,12 +396,13 @@ unchanged. Routing selects between two strategies; it does not improve either.
 
 ---
 
-## The lost routed scores
+## The re-measured routed scores
 
-`routed`'s faithfulness (0.969) and answer relevancy (0.699) are quoted
-throughout this report as prior-run values from 2026-08-25. They cannot be
-reproduced from the current repository, and the reason is a harness bug worth
-recording.
+`routed`'s judged scores were lost once and have since been re-measured. The
+figures in this report -- faithfulness 0.942, answer relevancy 0.744, Track B
+6/6, all from 2026-08-27 -- are first-hand and reproducible from
+`data/eval/results/`. The episode is kept here because the bug behind it is
+worth recording.
 
 `checkpoint()` in `src/evaluation/run_eval.py` merged per-configuration
 retrieval results into the existing raw file, but assigned the RAGAS block
@@ -383,15 +421,21 @@ reflects only the current one. `data/eval/` has never been tracked in git, so
 there is no commit to recover from either.
 
 The bug is fixed -- `_ragas` now merges by configuration key like everything
-else. The lost values are not recoverable. To restore them to first-hand status,
-re-run the routed configuration:
+else -- and the lost values were never recoverable, so the configuration was
+re-run on 2026-08-27:
 
     python -m src.evaluation.run_eval --only "routed" \
         --candidates 10 --ragas --llm-provider groq
 
-That costs roughly 105,000 judge tokens, about half of one day's Groq quota.
-Until then, treat 0.969 and 0.699 as reported-but-unverified. Every other number
-in this report is reproducible from `data/eval/results/`.
+That cost 115,099 tokens, a little over half of one day's Groq quota. The run
+also verified the fix in production: it completed with both `hybrid+filter` and
+`routed` present in `_ragas`, where the old code would have silently discarded
+`hybrid+filter` on the way past.
+
+The re-measurement returned 0.942 / 0.744 against the 0.969 / 0.699 that had been
+carried as unverified -- close enough to confirm the earlier run was not wildly
+misreported, far enough apart to flip the answer-relevancy comparison's sign. See
+"Generation quality" above for what that changed.
 
 The wider lesson matches the one that produced the token guard: results that
 cost a day of quota to produce must survive the next run that touches the same

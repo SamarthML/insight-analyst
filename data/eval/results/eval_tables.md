@@ -9,7 +9,7 @@ Retrieval scored against the ground-truth chunk citations in `questions.yaml`. D
 
 | config | n | hit rate | precision | recall | MRR | F1 |
 |---|---|---|---|---|---|---|
-| hybrid+filter | 22 | 0.545 | 0.118 | 0.500 | 0.350 | 0.188 |
+| routed | 22 | 0.591 | 0.118 | 0.500 | 0.392 | 0.188 |
 
 ### Generation quality (RAGAS, LLM-judged)
 
@@ -17,18 +17,18 @@ Judged metrics over the generated answer. Context precision/recall are NOT taken
 
 | config | faithfulness | answer relevancy |
 |---|---|---|
-| hybrid+filter | 0.917 | 0.719 |
+| routed | 0.942 | 0.744 |
 
 ### By question category
 
 | category | config | n | hit rate | recall | MRR |
 |---|---|---|---|---|---|
-| exact_fact | hybrid+filter | 13 | 0.692 | 0.615 | 0.451 |
-| conceptual | hybrid+filter | 9 | 0.333 | 0.333 | 0.204 |
+| exact_fact | routed | 13 | 0.692 | 0.615 | 0.451 |
+| conceptual | routed | 9 | 0.444 | 0.333 | 0.306 |
 
 ### Per question (rank of first ground-truth chunk; lower is better)
 
-| id | category | hybrid+filter |
+| id | category | routed |
 |---|---|---|
 | ef-01 | exact_fact | 1 |
 | ef-02 | exact_fact | 1 |
@@ -46,11 +46,11 @@ Judged metrics over the generated answer. Context precision/recall are NOT taken
 | co-01 | conceptual | miss |
 | co-02 | conceptual | miss |
 | co-03 | conceptual | miss |
-| co-04 | conceptual | miss |
+| co-04 | conceptual | 2 |
 | co-05 | conceptual | miss |
-| co-06 | conceptual | 2 |
+| co-06 | conceptual | 1 |
 | co-07 | conceptual | 1 |
-| co-08 | conceptual | 3 |
+| co-08 | conceptual | 4 |
 | co-09 | conceptual | miss |
 
 ## Track B — adversarial (unanswerable + ambiguous)
@@ -59,13 +59,13 @@ Pass = the system declined or asked for clarification instead of answering confi
 
 | config | n | passed | pass rate |
 |---|---|---|---|
-| hybrid+filter | 6 | 5 | 0.833 |
+| routed | 6 | 6 | 1.000 |
 
-| id | subtype | hybrid+filter |
+| id | subtype | routed |
 |---|---|---|
 | adv-01 | | PASS |
 | adv-02 | | PASS |
 | adv-03 | | PASS |
 | adv-04 | | PASS |
-| adv-05 | | FAIL |
+| adv-05 | | PASS |
 | adv-06 | | PASS |

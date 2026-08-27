@@ -3,19 +3,25 @@
 An advanced RAG system for business research and reporting — hybrid search,
 reranking, and RAG evaluation. Runs entirely locally on Ollama.
 
-> **Status: Phases 1-2 and 4 complete.** Ingestion, hybrid retrieval and
-> cross-encoder reranking run end to end in ~1.2s per query, and a two-track
-> evaluation harness scores retrieval against labelled ground truth. Report
-> generation and the served API are not implemented yet.
+> **Status: Phases 1-2, 4, 4b, 5a and 5c complete.** Ingestion, hybrid retrieval
+> and cross-encoder reranking run end to end in ~1.2s per query; a two-track
+> evaluation harness scores retrieval against labelled ground truth; query-type
+> routing picks a retrieval strategy per query; and multi-section report
+> generation is exposed through a local Streamlit UI. Tabular analysis (Phase 3)
+> and the served LangServe API (Phase 5b) are not implemented yet.
 
 ## Layout
 
 ```
 data/documents/     source corpus (PDF, Markdown, text)
+data/eval/          question set, raw results, curated write-up (Phase 4)
 data/tabular/       CSVs (Phase 3)
 src/config.py       paths, model names, chunk sizes
 src/ingestion/      corpus fetching, loading, chunking, index building
-src/retrieval/      hybrid retrieval + reranking (Phase 2)
+src/retrieval/      hybrid retrieval, reranking, query-type routing (Phases 2, 4b)
+src/evaluation/     two-track eval harness + daily token guard (Phase 4)
+src/reporting/      multi-section report generation (Phase 5a)
+src/ui/             local Streamlit front end (Phase 5c)
 notebooks/          experimentation
 storage/            built indexes (gitignored, rebuildable)
 ```
@@ -122,9 +128,9 @@ declines an unanswerable question or asks for clarification on an ambiguous one.
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
 | Hybrid only | 0.455 | 0.409 | 0.311 | 0.538 | 0.333 | **1.000** | 0.640 | 6/6 |
 | Hybrid + rerank | 0.500 | 0.432 | 0.345 | 0.538 | **0.444** | 0.843 | 0.626 | 6/6 |
-| Hybrid + filter | 0.545 | **0.500** | 0.350 | **0.692** | 0.333 | 0.948 | **0.740** | 6/6 |
+| Hybrid + filter | 0.545 | **0.500** | 0.350 | **0.692** | 0.333 | 0.948 | 0.740 | 6/6 |
 | Hybrid + filter + rerank | 0.545 | 0.477 | 0.356 | 0.615 | **0.444** | 0.900\* | 0.714\* | 5/6 |
-| **Routed** (Phase 4b) | **0.591** | **0.500** | **0.392** | **0.692** | **0.444** | 0.969† | 0.699† | 5/6 |
+| **Routed** (Phase 4b) | **0.591** | **0.500** | **0.392** | **0.692** | **0.444** | 0.942 | **0.744** | 6/6 |
 
 \* The reranked configuration's RAGAS pass exhausted the judge model's daily
 token budget: 3 of 44 scoring jobs returned 429 and were skipped, so these two
@@ -132,42 +138,39 @@ figures are means over ~41 jobs rather than 44. Every other row is complete.
 The direction agrees with the rest of the evidence, but treat that specific gap
 as suggestive rather than decisive.
 
-† `Routed`'s faithfulness and answer relevancy are from the 2026-08-25 run and
-**cannot currently be reproduced from this repository.** The harness replaced the
-stored `_ragas` block wholesale on every `--only` run instead of merging it per
-configuration, so the 2026-08-26 `hybrid + filter` re-run overwrote them. The bug
-is fixed in `src/evaluation/run_eval.py`, but the values themselves are gone --
-`data/eval/` has never been tracked in git, so there is no commit to recover them
-from. Treat these two figures as prior-run values pending a re-measurement of the
-routed configuration (~105k judge tokens, one full day of the Groq quota). Every
-other number in this table is reproducible from `data/eval/results/`.
+**`hybrid + filter` is the strongest of the four fixed configurations** — the
+four that apply one strategy unconditionally; `Routed` chooses between them per
+query and is assessed separately below. Among those four it has the best answer
+relevancy (0.740 vs 0.626–0.640 unfiltered), the best exact-fact retrieval,
+near-top faithfulness, and a perfect adversarial score. `Routed`'s 0.744 is
+nominally the highest relevancy in the table and is bolded as such, but that
+0.004 margin sits far inside the 0.021 noise floor established below — on this
+metric the two are indistinguishable. Filtering lifts answer relevancy by roughly
+0.10 across the board, comfortably clear of that floor, and a larger effect than
+anything reranking produced.
 
-**`hybrid + filter` is the strongest of the four fixed configurations** — best
-answer relevancy (0.740 vs 0.626–0.640 unfiltered), best exact-fact retrieval,
-near-top faithfulness, and a perfect adversarial score. Filtering lifts answer
-relevancy by roughly 0.10 across the board, comfortably clear of the 0.021 noise
-floor established below, and a larger effect than anything reranking produced.
-
-**`Routed` is the better default overall**, but on narrower grounds than the
-table suggests: it wins decisively on retrieval and ranking, and is a wash on
-generation quality. See [Query-type routing](#query-type-routing-phase-4b).
+**`Routed` is the better default overall** — decisively on retrieval and
+ranking, and now marginally on generation quality too, though only the retrieval
+gain is large enough to be called noise-free. See
+[Query-type routing](#query-type-routing-phase-4b).
 
 The headline is not the aggregate. Reranking improves every retrieval measure
 yet scores *worse* on faithfulness, and the reason is specific: on the only two
 questions where the filter-off configurations diverged, reranking lost one
-correct answer and produced one confidently wrong one. It is also the only
-configuration to fail Track B — `hybrid + filter + rerank` answered the
-deliberately ambiguous "What are the main risk factors?" with a confident list
-for an unnamed company, where every other configuration asked which company was
-meant. Filtering alone passed 6/6 with no adversarial regressions; reranking
-introduced the only failure. That is the same mechanism a third time — the
-reranker assembles a topically coherent context out of chunks that should not
-cohere, and the model stops noticing what it should have questioned. The three
-instances span both question categories and three distinct failure shapes:
-ef-05, where a correct refusal became a fabrication; ef-03, where a correct
-answer was demoted out of the context entirely; and adv-05, where a request
-for clarification became a confident answer. Full analysis, including the
-mechanism, is in
+correct answer and produced one confidently wrong one. Those two instances are
+one mechanism in two shapes — ef-05, where a correct refusal became a
+fabrication, and ef-03, where a correct answer was demoted out of the context
+entirely. In both the reranker assembles a topically coherent context out of
+chunks that should not cohere, and the model stops noticing what it should have
+questioned.
+
+An earlier version of this section counted `adv-05` as a third instance, on the
+grounds that `hybrid + filter + rerank` was the only configuration to fail
+Track B on 2026-08-23. That attribution no longer holds. `adv-05` has since
+flipped across three further measurements under two different configurations,
+so its failure there was judge noise rather than a reranking effect — see
+[Query-type routing](#query-type-routing-phase-4b). Two clean instances, not
+three. Full analysis, including the mechanism, is in
 [data/eval/results/eval_results.md](data/eval/results/eval_results.md).
 
 ### Measurement dates and run-to-run variance
@@ -175,7 +178,9 @@ mechanism, is in
 The rows above are not all from one sitting — Groq's 200,000 tokens/day cap makes
 a single five-configuration run impossible. `Hybrid only` and `Hybrid + rerank`
 were measured 2026-08-23; `Hybrid + filter`, `Hybrid + filter + rerank` and
-`Routed` on 2026-08-25.
+`Routed` on 2026-08-25. `Routed`'s judged metrics were subsequently re-measured
+on 2026-08-27 and the table carries those figures — see
+[Query-type routing](#query-type-routing-phase-4b).
 
 Re-running `hybrid + filter` unchanged on 2026-08-26 — same judge, same questions,
 same `k=5`, same `candidates=10`, nothing altered but the date — gives a direct
@@ -287,28 +292,42 @@ set comparisons against ground-truth chunk labels: no judge, no sampling, no
 run-to-run variance. Unlike the generation metrics, they are not subject to the
 noise floor above, which is what makes this the load-bearing result.
 
-**Generation quality is a wash.** Measured against the same-day (2026-08-25)
-`hybrid + filter` figures, routing scores +0.021 on faithfulness (0.969 vs 0.948)
-and −0.041 on answer relevancy (0.699 vs 0.740). The faithfulness gain is
-*smaller* than the 0.031 faithfulness noise floor and cannot be called an effect.
-The relevancy loss does exceed the 0.021 relevancy noise floor, so if anything
-the evidence leans mildly *against* routing there — though it rests on figures
-that are themselves unreproducible (see † above) and on a metric running at
-`strictness=1`. The honest reading: routing does not measurably improve
-generation quality, and may cost a little answer relevancy.
+**Generation quality now leans mildly toward routing.** Against
+`hybrid + filter`'s closest measurement in time (2026-08-26), routing scores
+**+0.025 on both metrics**:
 
-Comparing routing's 0.969 against the *2026-08-26* `hybrid + filter` faithfulness
-of 0.917 would show a far more flattering +0.052 — but those are different days,
-and most of that gap is the 0.031 day-to-day drift rather than the configuration.
-Only same-day comparisons are used above.
+| | Routed (2026-08-27) | Hybrid + filter (2026-08-26) | delta | noise floor | reading |
+|---|---:|---:|---:|---:|---|
+| Faithfulness | 0.942 | 0.917 | +0.025 | 0.031 | within noise, inconclusive |
+| Answer relevancy | 0.744 | 0.719 | +0.025 | 0.021 | just clears the floor |
 
-**Track B is 5/6 for both, and both fail the same question, `adv-05`.** This is
-not routing fixing anything, nor routing breaking anything. The identical
-`hybrid + filter` configuration passed `adv-05` on 2026-08-25 and failed it on
-2026-08-26 with nothing changed but the date. `adv-05` ("What are the main risk
-factors?") is inherently borderline for this judge and model, flipping between a
-confident answer and a request for clarification independently of which retrieval
-strategy feeds it.
+Relevancy's +0.025 slightly exceeds its 0.021 floor, so it is the first judged
+result here that can be called an effect at all — and a small one. Faithfulness
+stays inside its 0.031 floor and remains inconclusive. This is still a *cross-day*
+pair, not a same-sitting comparison: it is the best available, not a clean one,
+and a genuinely matched result would need both configurations measured in one
+run.
+
+**This reverses what this section previously concluded.** It read "routing does
+not measurably improve generation quality, and may cost a little answer
+relevancy." That rested on figures of 0.969 / 0.699 which were themselves lost to
+a harness bug and quoted from memory of an earlier run. Re-measuring gave
+0.942 / 0.744 — faithfulness 0.027 lower, relevancy 0.045 higher — which flips
+the relevancy sign from −0.041 to +0.025. **The reversal came from repairing a
+lost-data problem, not from a fresh run happening to land differently.** The
+earlier conclusion was drawn from numbers that should not have been trusted, and
+recording them as unverified rather than asserting them is what made the
+correction possible.
+
+**Track B is 6/6 for routing, up from 5/6 — and that movement is noise.** The
+sole difference is `adv-05` flipping. That question has now flipped across three
+separate measurements with no relationship to retrieval configuration:
+`hybrid + filter` passed it on 2026-08-25 and failed it on 2026-08-26, and
+`routed` failed it on 2026-08-25 and passed it on 2026-08-27 — in both cases with
+nothing changed but the date. The instability is inherent to `adv-05` under this
+judge, not attributable to any configuration tested. **At n=6 a single flipping
+question moves the aggregate by 0.167, so Track B should be read as noisy for
+either configuration rather than as a clean signal.**
 
 **Latency**, measured retrieval-only with no generation in the loop:
 
@@ -327,10 +346,14 @@ median latency for +0.046 hit rate and +0.042 MRR.
 > called out separately rather than folded into a mean, since averaging it in
 > overstates steady-state latency by a factor of seven.
 
-**Verdict: routing is the better default**, on retrieval and ranking quality
-alone. Generation quality is a wash within measured noise, and it costs a little
-latency. That is a narrower claim than the headline hit-rate gap suggests, and it
-is the one the evidence actually supports.
+**Verdict: routing is the better default**, and the case rests where it always
+did — on retrieval. Hit rate 0.591 vs 0.545 and MRR 0.392 vs 0.356 are
+deterministic, judge-free and reproduced exactly across the 2026-08-25 and
+2026-08-27 runs, with all 22 Track A questions routing to their labelled type
+both times. Generation quality leans slightly toward routing but only relevancy
+clears its noise floor, and only just; Track B is noise at this sample size; and
+routing costs a little latency. The retrieval gain is the part that would survive
+another run, and it is the part the verdict is built on.
 
 **Not resolved by routing.** The open items from the filtering work stand
 unchanged: within-document ranking failures (front matter outranking content on
