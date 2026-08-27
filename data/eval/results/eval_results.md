@@ -4,8 +4,13 @@ Runs 2026-08-23, 2026-08-25, 2026-08-26 and 2026-08-27. Corpus 16,917 chunks | e
 `BAAI/bge-small-en-v1.5` (local) | judge `groq:openai/gpt-oss-120b` | k=5 |
 28 questions × 5 configs.
 
-> This file is the curated write-up. The harness regenerates raw tables into
-> `eval_tables.md` on every run; it does not overwrite this document.
+> This file is the curated write-up, and the only multi-configuration
+> comparison in the repository. The harness regenerates `eval_tables.md` on
+> every run and it therefore holds **only the configurations of the most recent
+> run** -- currently `routed` alone. It is a snapshot, not a standing
+> comparison, and the committed copy will disagree with the tables here whenever
+> the last run covered fewer configurations. This document is never overwritten
+> by the harness.
 >
 > **STATUS (2026-08-27): complete.** Retrieval and LLM-judged metrics are final
 > and first-hand for all five configurations. `routed`'s judged scores were
@@ -25,16 +30,31 @@ Runs 2026-08-23, 2026-08-25, 2026-08-26 and 2026-08-27. Corpus 16,917 chunks | e
 
 ## Headline
 
-**Edition filtering and reranking fix different problems, and neither is a
-general win.** Filtering carries exact-fact questions (hit 0.538 -> 0.692) and
-does nothing for conceptual ones; reranking carries conceptual questions
-(0.333 -> 0.444) and does nothing for exact-fact. Running both is *worse* on
-exact-fact than filtering alone.
+**Routing between the two strategies beats running either, or both.** Filtering
+carries exact-fact questions (hit 0.538 -> 0.692) and does nothing for
+conceptual ones; reranking carries conceptual questions (0.333 -> 0.444) and
+does nothing for exact-fact; running both is *worse* on exact-fact than
+filtering alone. Choosing per query captures both halves at once -- exact-fact
+0.692 and conceptual 0.444 in one configuration, lifting overall hit rate to
+0.591 against 0.545 for the best fixed alternative, and MRR to 0.392 against
+0.356. That result is deterministic and reproduced exactly across two runs two
+days apart, which is why it, and not the judged metrics, is what the
+recommendation rests on.
+
+**Generation quality leans slightly to routing, but only just.** Against
+`hybrid+filter`'s nearest measurement, routing scores +0.025 on both
+faithfulness and answer relevancy. Relevancy's margin clears its 0.021 noise
+floor; faithfulness's does not clear its 0.031 one. An earlier version of this
+report concluded the opposite -- that routing cost answer relevancy -- from
+figures later found to be unreproducible; see "The re-measured routed scores".
 
 **Reranking improves retrieval metrics without improving answers.** On the two
 questions where the filter-off configurations diverged, reranking lost one
 correct answer and produced one confidently wrong one -- the entire
-faithfulness drop from 1.000 to 0.843.
+faithfulness drop from 1.000 to 0.843. Both figures are 2026-08-23 aggregates
+whose per-question answers were not persisted (see the ‡ note under "Generation
+quality"), so the mechanism below is evidenced by the two named questions rather
+than by a re-derivable score.
 
 **Edition filtering fixed less than the diagnosis predicted.** 10 of 22 misses
 were attributed to year discrimination; filtering recovers 2 of them outright
@@ -52,8 +72,9 @@ Retrieval scored by set comparison against the ground-truth chunk citations in
 |---|---|---|---|---|---|---|
 | hybrid only | 22 | 0.455 | 0.100 | 0.409 | 0.311 | 0.158 |
 | hybrid+rerank | 22 | 0.500 | 0.100 | 0.432 | 0.345 | 0.160 |
-| hybrid+filter | 22 | **0.545** | 0.118 | **0.500** | 0.350 | **0.188** |
-| hybrid+filter+rerank | 22 | **0.545** | 0.109 | 0.477 | **0.356** | 0.175 |
+| hybrid+filter | 22 | 0.545 | 0.118 | **0.500** | 0.350 | **0.188** |
+| hybrid+filter+rerank | 22 | 0.545 | 0.109 | 0.477 | 0.356 | 0.175 |
+| **routed** | 22 | **0.591** | 0.118 | **0.500** | **0.392** | **0.188** |
 
 Edition filtering beats reranking on every retrieval measure, and the two are
 not additive: adding the reranker on top of the filter *lowers* recall
@@ -88,14 +109,25 @@ the interpretable columns.
 
 ### Generation quality (RAGAS, LLM-judged)
 
-Covers 2 of the 4 configurations (see STATUS above).
+All five configurations, with the run each figure comes from. Read every
+comparison here against the noise floor in "Run-to-run variance": 0.031 on
+faithfulness, 0.021 on answer relevancy.
 
-| config | faithfulness | answer relevancy |
-|---|---|---|
-| hybrid only | **1.000** | 0.640 |
-| hybrid+rerank | **0.843** | 0.626 |
-| hybrid+filter | _pending_ | _pending_ |
-| hybrid+filter+rerank | _pending_ | _pending_ |
+| config | faithfulness | answer relevancy | measured |
+|---|---|---|---|
+| hybrid only | **1.000** | 0.640 | 2026-08-23 ‡ |
+| hybrid+rerank | 0.843 | 0.626 | 2026-08-23 ‡ |
+| hybrid+filter | 0.948 | 0.740 | 2026-08-25 |
+| hybrid+filter | 0.917 | 0.719 | 2026-08-26 (replicate) |
+| hybrid+filter+rerank | 0.900 | 0.714 | 2026-08-25 (partial, 429s) |
+| **routed** | 0.942 | **0.744** | 2026-08-27 |
+
+‡ The 2026-08-23 run's per-question answers were not persisted. `eval_raw.json`
+carries retrieval rows for these two configurations but no generated answers or
+judge verdicts, so these aggregates are reported as measured and are not
+independently re-derivable from the committed raw file without a re-run. It is
+the same category of gap that lost the routed scores; it is recorded here rather
+than left for a reader to discover.
 
 Reranking scores *worse* on both. The next section explains why, because the
 naive reading — "reranking makes the generator hallucinate" — is not quite
@@ -177,10 +209,20 @@ fabricated figure.
 Pass = the system declined, or asked for clarification, instead of answering
 confidently. **Reported separately from Track A and never averaged with it.**
 
-| config | n | passed | pass rate |
-|---|---|---|---|
-| hybrid+rerank | 6 | 6 | **1.000** |
-| hybrid only | 6 | 6 | **1.000** |
+| config | n | passed | pass rate | measured |
+|---|---|---|---|---|
+| hybrid only | 6 | 6 | 1.000 | 2026-08-23 ‡ |
+| hybrid+rerank | 6 | 6 | 1.000 | 2026-08-23 ‡ |
+| hybrid+filter | 6 | 6 | 1.000 | 2026-08-25 |
+| hybrid+filter | 6 | 5 | 0.833 | 2026-08-26 (replicate) |
+| hybrid+filter+rerank | 6 | 5 | 0.833 | 2026-08-25 |
+| routed | 6 | 5 | 0.833 | 2026-08-25 |
+| **routed** | 6 | **6** | **1.000** | 2026-08-27 |
+
+Every difference in this table is `adv-05`, and `adv-05` flips on its own -- see
+"Track B: adv-05 is noise" below. At n=6 one question moves the rate by 0.167,
+so these numbers rank nothing. ‡ marks the two configurations whose per-question
+verdicts are not in `eval_raw.json` (see the RAGAS note above).
 
 | id | subtype | response (both configs) |
 |---|---|---|

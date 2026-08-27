@@ -43,6 +43,17 @@ pandas                   # results tables
 # API key is needed unless you actually select an OpenAI model.
 ragas
 
+# Hosted judge for generation and RAGAS scoring. Groq is the default for every
+# `--llm-provider` example in the README, so it is a hard requirement to
+# reproduce the evaluation or generate a report; only retrieval runs without it.
+langchain-groq
+# The other hosted providers are optional and deliberately not installed here.
+# Selecting one without its package raises a directed install message from
+# `judges.get_llm` (see src/evaluation/judges.py) rather than a stack trace:
+#     pip install langchain-anthropic     # --llm-provider anthropic
+#     pip install langchain-openai        # --llm-provider openai (ragas pulls
+#                                         # this in already, see note above)
+
 # UI (Phase 5, src/ui/app.py)
 # Local single-user front end over the routed pipeline and report generator.
 # Launch with `streamlit run src/ui/app.py`.

@@ -1,7 +1,15 @@
 # Insight Analyst
 
 An advanced RAG system for business research and reporting — hybrid search,
-reranking, and RAG evaluation. Runs entirely locally on Ollama.
+reranking, query-type routing, and a two-track RAG evaluation harness.
+
+**Retrieval runs entirely on your machine**: embedding, dense and BM25 search,
+fusion and cross-encoder reranking are all local, and so are RAGAS's own
+embedding needs. **Generation and evaluation judging do not.** They default to a
+hosted model (Groq), which means the prompt — including the retrieved corpus
+chunks — leaves the machine. That is the only part of the pipeline that does.
+Pass `--llm-provider ollama` to keep everything local, at a substantial cost in
+speed and answer quality on CPU-only hardware.
 
 > **Status: Phases 1-2, 4, 4b, 5a and 5c complete.** Ingestion, hybrid retrieval
 > and cross-encoder reranking run end to end in ~1.2s per query; a two-track
@@ -30,9 +38,15 @@ storage/            built indexes (gitignored, rebuildable)
 
 ```bash
 pip install -r requirements.txt
-cp .env.example .env          # optional; defaults work as-is
+cp .env.example .env          # optional for retrieval; needed for generation
 ollama pull nomic-embed-text
 ```
+
+`.env` is genuinely optional only if you stay on the retrieval path — every
+default there works offline. Generation and evaluation are the exception: they
+default to `--llm-provider groq`, which needs `GROQ_API_KEY` set. See
+`.env.example` for where it goes, or pass `--llm-provider ollama` to keep
+everything local instead.
 
 On a machine without a GPU, embed with `sentence-transformers` instead — the
 Ollama path takes ~6 hours on this corpus versus ~1.3. It needs a matching
@@ -101,8 +115,8 @@ The pipeline is dense + BM25 -> Reciprocal Rank Fusion -> cross-encoder rerank:
 | **end to end** | **~1.2s** | measured warm, CPU-only |
 
 Reranking with `BAAI/bge-reranker-base` instead is ~9x slower (~24s for 20
-candidates) and is exposed via `--rerank-model` for offline evaluation rather
-than interactive use.
+candidates) and is exposed via `--model` on `src.retrieval.rerank` for offline
+evaluation rather than interactive use.
 
 ## Evaluate
 
@@ -126,17 +140,21 @@ declines an unanswerable question or asks for clarification on an ambiguous one.
 
 | Config | Hit rate | Recall | MRR | Exact-fact hit | Conceptual hit | Faithfulness | Answer relevancy | Track B |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
-| Hybrid only | 0.455 | 0.409 | 0.311 | 0.538 | 0.333 | **1.000** | 0.640 | 6/6 |
-| Hybrid + rerank | 0.500 | 0.432 | 0.345 | 0.538 | **0.444** | 0.843 | 0.626 | 6/6 |
-| Hybrid + filter | 0.545 | **0.500** | 0.350 | **0.692** | 0.333 | 0.948 | 0.740 | 6/6 |
+| Hybrid only | 0.455 | 0.409 | 0.311 | 0.538 | 0.333 | **1.000**‡ | 0.640‡ | 6/6‡ |
+| Hybrid + rerank | 0.500 | 0.432 | 0.345 | 0.538 | **0.444** | 0.843‡ | 0.626‡ | 6/6‡ |
+| Hybrid + filter | 0.545 | **0.500** | 0.350 | **0.692** | 0.333 | 0.948† | 0.740† | 6/6† |
 | Hybrid + filter + rerank | 0.545 | 0.477 | 0.356 | 0.615 | **0.444** | 0.900\* | 0.714\* | 5/6 |
 | **Routed** (Phase 4b) | **0.591** | **0.500** | **0.392** | **0.692** | **0.444** | 0.942 | **0.744** | 6/6 |
 
-\* The reranked configuration's RAGAS pass exhausted the judge model's daily
-token budget: 3 of 44 scoring jobs returned 429 and were skipped, so these two
-figures are means over ~41 jobs rather than 44. Every other row is complete.
-The direction agrees with the rest of the evidence, but treat that specific gap
-as suggestive rather than decisive.
+\* † ‡ **The judged columns are not all from one run.** `*` are means over ~41
+of 44 RAGAS jobs, the remainder lost to daily-quota 429s. `†` is the 2026-08-25
+measurement, where the committed `eval_raw.json` holds a 2026-08-26 replicate
+instead. `‡` are 2026-08-23 aggregates whose per-question answers were never
+persisted, so they cannot be re-derived from the raw file without a re-run. The
+retrieval columns carry no marks: they are deterministic and reproduce exactly.
+Per-run dates for every judged figure, and the noise floor to read the
+differences against, are in
+[eval_results.md](data/eval/results/eval_results.md).
 
 **`hybrid + filter` is the strongest of the four fixed configurations** — the
 four that apply one strategy unconditionally; `Routed` chooses between them per
